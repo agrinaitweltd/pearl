@@ -1418,11 +1418,34 @@ button { cursor: pointer; font-family: inherit; }
 .about-unique-card {
   background: var(--white);
   border-radius: 14px;
-  padding: 30px 24px 28px;
+  padding: 34px 28px 32px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   box-shadow: 0 2px 16px rgba(10,30,20,0.05);
+  position: relative;
+  overflow: hidden;
+}
+/* First card: dark green featured */
+.about-unique-card--featured {
+  background: var(--green-dark);
+  color: var(--white);
+}
+.about-unique-card--featured h3 { color: var(--white); }
+.about-unique-card--featured p { color: rgba(255,255,255,0.78); }
+/* Diagonal lighter-green triangle in top-right */
+.about-unique-card-triangle {
+  position: absolute;
+  top: 0; right: 0;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 180px 180px 0;
+  border-color: transparent #2e7d4a transparent transparent;
+  opacity: 0.5;
+}
+/* White icon on featured card */
+.about-unique-card--featured .about-unique-icon svg {
+  stroke: white;
 }
 .about-unique-icon {
   width: 60px; height: 60px;

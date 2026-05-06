@@ -240,8 +240,9 @@ function AboutPage() {
             extraordinary and unforgettable.
           </p>
           <div className="about-unique-grid">
-            {UNIQUE_CARDS.map((c) => (
-              <div className="about-unique-card" key={c.title}>
+            {UNIQUE_CARDS.map((c, i) => (
+              <div className={`about-unique-card${i === 0 ? ' about-unique-card--featured' : ''}`} key={c.title}>
+                {i === 0 && <span className="about-unique-card-triangle" aria-hidden="true"/>}
                 <div className="about-unique-icon">{c.icon}</div>
                 <h3>{c.title}</h3>
                 <p>{c.text}</p>
