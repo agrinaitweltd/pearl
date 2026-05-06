@@ -152,43 +152,45 @@ button { cursor: pointer; font-family: inherit; }
   top: 0;
   z-index: 99;
   background: var(--white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 82px;
-  gap: 2rem;
+  height: 86px;
+  gap: 1.5rem;
 }
 
 /* Brand */
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-shrink: 0;
   text-decoration: none;
 }
 .brand-logo-img {
-  width: 64px;
-  height: auto;
+  width: 62px;
+  height: 62px;
 }
 .brand-text strong {
   display: block;
   font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: 0.03em;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
   color: var(--text);
-  line-height: 1.1;
+  line-height: 1.05;
+  text-transform: uppercase;
 }
 .brand-text small {
   display: block;
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
   color: var(--muted);
   text-transform: uppercase;
+  margin-top: 2px;
 }
 
 /* Nav links */
@@ -201,18 +203,19 @@ button { cursor: pointer; font-family: inherit; }
 }
 .main-nav li a {
   display: block;
-  padding: 0 16px;
-  font-size: 0.96rem;
-  font-weight: 600;
+  padding: 0 14px;
+  font-size: 0.94rem;
+  font-weight: 700;
   color: var(--text);
   position: relative;
   transition: color 0.2s;
   white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 .main-nav li a::after {
   content: '';
   position: absolute;
-  bottom: -6px; left: 16px; right: 16px;
+  bottom: -6px; left: 14px; right: 14px;
   height: 2px;
   background: var(--green);
   transform: scaleX(0);
@@ -226,18 +229,20 @@ button { cursor: pointer; font-family: inherit; }
 
 /* Hamburger */
 .menu-btn {
-  width: 52px; height: 52px;
+  width: 48px; height: 46px;
   background: var(--green);
   color: var(--white);
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   cursor: pointer;
+  transition: background 0.2s;
 }
-.menu-btn svg { width: 22px; height: 22px; stroke: white; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+.menu-btn:hover { background: var(--green-dark); }
+.menu-btn svg { width: 20px; height: 20px; stroke: white; fill: none; stroke-width: 2.2; stroke-linecap: round; }
 
 /* ─── Hero ───────────────────────────────────────────────────── */
 .hero {
