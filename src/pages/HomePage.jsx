@@ -198,25 +198,40 @@ export default function HomePage() {
       {/* ── ABOUT / WHO WE ARE ───────────────────────────────── */}
       <section className="section about-section">
         <div className="container about-grid">
-          {/* Left: stacked image + badges */}
+          {/* Left: two overlapping photos + vertical banner + 25yrs box */}
           <div className="about-left">
-            <span className="about-pill">2,500 + Travelers Worldwide</span>
-            <img
-              className="about-img-main"
-              src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=800&q=80"
-              alt="Uganda safari"
-            />
-            <div className="about-exp">
-              <strong>25</strong>
-              <span>years of experience</span>
+            <div className="about-photo-stack">
+              <img
+                className="about-img-back"
+                src="https://images.unsplash.com/photo-1606574977565-af78d4b2b5a8?auto=format&fit=crop&w=600&q=80"
+                alt="Leopard on tree"
+                loading="lazy"
+              />
+              <img
+                className="about-img-front"
+                src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=700&q=80"
+                alt="Lion close-up"
+                loading="lazy"
+              />
+              <div className="about-banner">2,500 + Customer Worldwide</div>
+              <div className="about-exp">
+                <strong>25</strong>
+                <span>year of<br/>experience</span>
+              </div>
             </div>
           </div>
 
           {/* Right: text */}
           <div className="about-right">
-            <span className="script">Where Adventure Meets The Wild!</span>
-            <h2>Discover The Wonders Of Uganda</h2>
-            <p>
+            <p className="about-tag">
+              <svg viewBox="0 0 20 20" fill="none" width="16" height="16" aria-hidden="true">
+                <path d="M10 2 C6 2 3 6 4 10 C5 14 9 17 10 18 C11 17 15 14 16 10 C17 6 14 2 10 2Z" fill="#1b6b3a" opacity="0.7"/>
+                <path d="M8 8 Q10 4 12 8 Q10 12 8 8Z" fill="#c9a96e" opacity="0.9"/>
+              </svg>
+              <span className="script" style={{fontSize:'1.5rem', color:'var(--gold)'}}>Where Adventure Meets the Wild!</span>
+            </p>
+            <h2 className="about-heading">Discover The Wonders Of Uganda</h2>
+            <p className="about-body">
               At Pearl Land Safaris, we craft unforgettable safari experiences that immerse you in
               Uganda's breathtaking landscapes, diverse wildlife, and rich cultural heritage.
               With expert guides, customised itineraries, and a strong commitment to sustainability,
@@ -226,21 +241,23 @@ export default function HomePage() {
             <div className="about-features">
               <div className="about-feat">
                 <div className="about-feat-icon">
-                  <svg viewBox="0 0 36 36" fill="none" stroke="#c9a96e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="36" height="36" aria-hidden="true"><path d="M4 28 L18 6 L32 28 Z"/><path d="M10 28 L18 14 L26 28"/><line x1="18" y1="6" x2="18" y2="2"/></svg>
+                  <img src="https://img.icons8.com/ios/80/1b6b3a/trekking.png" alt="" width="40" height="40" loading="lazy"/>
+                  <span className="about-feat-dot" aria-hidden="true"/>
                 </div>
                 <h3>Low Price &amp; Friendly</h3>
-                <p>We offer the best prices for our tour packages so you can enjoy even budget-friendly safaris.</p>
+                <p>We use to offer best prices for our tour packages so as we can do even budget safari.</p>
               </div>
               <div className="about-feat">
                 <div className="about-feat-icon">
-                  <svg viewBox="0 0 36 36" fill="none" stroke="#c9a96e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="36" height="36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><path d="M18 4v4M18 28v4M4 18h4M28 18h4"/><path d="M23 13l-8 5-3 8 8-5 3-8z" fill="#c9a96e" opacity="0.35"/></svg>
+                  <img src="https://img.icons8.com/ios/80/1b6b3a/tour-guide.png" alt="" width="40" height="40" loading="lazy"/>
+                  <span className="about-feat-dot" aria-hidden="true"/>
                 </div>
                 <h3>Trusted Travel Guide</h3>
-                <p>Our staff are professional and trustworthy — your safety and comfort are our top priority.</p>
+                <p>Our Staffs are trustful incase you will forget anything worry out</p>
               </div>
             </div>
 
-            <Link className="btn" to="/about">More About Us</Link>
+            <Link className="btn btn-dark" to="/about">MORE ABOUT US</Link>
           </div>
         </div>
       </section>

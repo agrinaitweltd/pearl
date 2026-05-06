@@ -590,94 +590,148 @@ button { cursor: pointer; font-family: inherit; }
 .about-section { background: var(--white); }
 .about-grid {
   display: grid;
-  grid-template-columns: 42% 58%;
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: 44% 56%;
+  gap: 72px;
+  align-items: center;
 }
+
+/* ── Photo stack ── */
 .about-left { position: relative; }
-.about-img-main {
+.about-photo-stack {
+  position: relative;
   width: 100%;
+  min-height: 480px;
+}
+/* Back photo: smaller, top-left, slightly inset */
+.about-img-back {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 60%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 4px;
+  z-index: 1;
+}
+/* Front photo: larger, overlaps bottom-right */
+.about-img-front {
+  position: absolute;
+  top: 90px;
+  left: 110px;
+  width: 75%;
   aspect-ratio: 4/5;
   object-fit: cover;
-  border-radius: 12px;
-  background: #d8e2dc;
+  border-radius: 4px;
+  z-index: 2;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.16);
 }
-/* "2500+ Customers" banner on left edge */
-.about-pill {
+/* Rotated green vertical banner */
+.about-banner {
   position: absolute;
-  top: 60px;
-  left: -18px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  top: 100px;
+  left: 0;
+  z-index: 3;
   background: var(--green);
   color: var(--white);
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
-  padding: 18px 12px;
-  border-radius: 0 6px 6px 0;
   text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 20px 11px;
   white-space: nowrap;
 }
-/* "25 years" box bottom-left */
+/* 25-years experience box */
 .about-exp {
   position: absolute;
-  bottom: 28px;
-  left: 28px;
+  bottom: 0;
+  left: 40px;
+  z-index: 4;
   background: var(--white);
-  border: 1.5px dashed var(--border);
-  padding: 16px 22px;
-  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.09);
+  padding: 18px 26px;
   text-align: center;
   min-width: 130px;
 }
 .about-exp strong {
   display: block;
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 800;
   color: var(--green);
   line-height: 1;
 }
-.about-exp span { font-size: 0.82rem; color: var(--muted); }
+.about-exp span { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
-.about-right .script { margin-bottom: 8px; }
-.about-right h2 {
+/* ── Right side ── */
+.about-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.about-heading {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
-  line-height: 1.2;
-  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 18px;
 }
-.about-right > p {
+.about-body {
   color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 28px;
-  font-size: 0.97rem;
+  line-height: 1.85;
+  margin-bottom: 30px;
+  font-size: 0.96rem;
+  text-align: justify;
 }
 .about-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 30px;
-  margin-bottom: 32px;
+  gap: 24px 36px;
+  margin-bottom: 36px;
 }
-.about-feat { display: flex; flex-direction: column; gap: 6px; }
+.about-feat { display: flex; flex-direction: column; gap: 8px; }
 .about-feat-icon {
-  width: 44px; height: 44px;
+  width: 48px; height: 48px;
   position: relative;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-end;
 }
-.about-feat-icon::after {
-  content: '';
+.about-feat-icon img { position: relative; z-index: 1; }
+.about-feat-dot {
   position: absolute;
-  right: -4px; bottom: -4px;
+  right: -2px;
+  top: 0;
   width: 18px; height: 18px;
   border-radius: 50%;
   background: var(--gold);
-  opacity: 0.55;
+  opacity: 0.75;
+  z-index: 0;
 }
-.about-feat-emoji { font-size: 1.8rem; }
 .about-feat h3 { color: var(--gold); font-size: 0.97rem; font-weight: 700; }
-.about-feat p { color: var(--muted); font-size: 0.87rem; line-height: 1.6; }
+.about-feat p { color: var(--muted); font-size: 0.87rem; line-height: 1.65; }
+
+/* Dark green CTA button variant */
+.btn-dark {
+  background: var(--green-dark);
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  padding: 16px 40px;
+  border-radius: 4px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-dark:hover { background: var(--green-deep); }
 
 /* ─── Why us / Feature cards ──────────────────────────────────── */
 .why-section {
