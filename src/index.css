@@ -1425,27 +1425,41 @@ button { cursor: pointer; font-family: inherit; }
   box-shadow: 0 2px 16px rgba(10,30,20,0.05);
   position: relative;
   overflow: hidden;
+  transition: background 0.3s, box-shadow 0.3s;
+  cursor: default;
 }
-/* First card: dark green featured */
-.about-unique-card--featured {
-  background: var(--green-dark);
-  color: var(--white);
-}
-.about-unique-card--featured h3 { color: var(--white); }
-.about-unique-card--featured p { color: rgba(255,255,255,0.78); }
-/* Diagonal lighter-green triangle in top-right */
+/* Diagonal lighter-green triangle — always present, hidden by default */
 .about-unique-card-triangle {
   position: absolute;
   top: 0; right: 0;
   width: 0; height: 0;
   border-style: solid;
-  border-width: 0 180px 180px 0;
-  border-color: transparent #2e7d4a transparent transparent;
-  opacity: 0.5;
+  border-width: 0 200px 200px 0;
+  border-color: transparent #3d9c5a transparent transparent;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
 }
-/* White icon on featured card */
-.about-unique-card--featured .about-unique-icon svg {
+/* On hover: green card + show triangle */
+.about-unique-card:hover {
+  background: var(--green-dark);
+  box-shadow: 0 8px 32px rgba(10,30,20,0.18);
+}
+.about-unique-card:hover .about-unique-card-triangle {
+  opacity: 0.55;
+}
+.about-unique-card:hover h3 { color: var(--white); }
+.about-unique-card:hover p { color: rgba(255,255,255,0.78); }
+.about-unique-card:hover .about-unique-icon svg {
   stroke: white;
+}
+/* Smooth text/icon transitions */
+.about-unique-card h3,
+.about-unique-card p {
+  transition: color 0.3s;
+}
+.about-unique-card .about-unique-icon svg {
+  transition: stroke 0.3s;
 }
 .about-unique-icon {
   width: 60px; height: 60px;
