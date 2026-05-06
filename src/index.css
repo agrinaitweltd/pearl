@@ -84,6 +84,14 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 0.87rem;
   position: relative;
   z-index: 10;
+  /* jagged bottom wave via SVG mask */
+  padding-bottom: 28px;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='80' viewBox='0 0 1440 80'%3E%3Crect width='1440' height='55' fill='black'/%3E%3Cpath d='M0 55 Q20 80 40 55 Q60 30 80 55 Q100 80 120 55 Q140 30 160 55 Q180 80 200 55 Q220 30 240 55 Q260 80 280 55 Q300 30 320 55 Q340 80 360 55 Q380 30 400 55 Q420 80 440 55 Q460 30 480 55 Q500 80 520 55 Q540 30 560 55 Q580 80 600 55 Q620 30 640 55 Q660 80 680 55 Q700 30 720 55 Q740 80 760 55 Q780 30 800 55 Q820 80 840 55 Q860 30 880 55 Q900 80 920 55 Q940 30 960 55 Q980 80 1000 55 Q1020 30 1040 55 Q1060 80 1080 55 Q1100 30 1120 55 Q1140 80 1160 55 Q1180 30 1200 55 Q1220 80 1240 55 Q1260 30 1280 55 Q1300 80 1320 55 Q1340 30 1360 55 Q1380 80 1400 55 Q1420 30 1440 55 L1440 0 L0 0 Z' fill='black'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='80' viewBox='0 0 1440 80'%3E%3Crect width='1440' height='55' fill='black'/%3E%3Cpath d='M0 55 Q20 80 40 55 Q60 30 80 55 Q100 80 120 55 Q140 30 160 55 Q180 80 200 55 Q220 30 240 55 Q260 80 280 55 Q300 30 320 55 Q340 80 360 55 Q380 30 400 55 Q420 80 440 55 Q460 30 480 55 Q500 80 520 55 Q540 30 560 55 Q580 80 600 55 Q620 30 640 55 Q660 80 680 55 Q700 30 720 55 Q740 80 760 55 Q780 30 800 55 Q820 80 840 55 Q860 30 880 55 Q900 80 920 55 Q940 30 960 55 Q980 80 1000 55 Q1020 30 1040 55 Q1060 80 1080 55 Q1100 30 1120 55 Q1140 80 1160 55 Q1180 30 1200 55 Q1220 80 1240 55 Q1260 30 1280 55 Q1300 80 1320 55 Q1340 30 1360 55 Q1380 80 1400 55 Q1420 30 1440 55 L1440 0 L0 0 Z' fill='black'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .topbar-inner {
   display: flex;
@@ -94,36 +102,45 @@ button { cursor: pointer; font-family: inherit; }
 }
 .topbar-social {
   display: flex;
-  gap: 14px;
+  gap: 16px;
+  align-items: center;
 }
 .topbar-social a {
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px; height: 26px;
+  border: 1.5px solid rgba(255,255,255,0.45);
+  border-radius: 4px;
+  font-size: 0.78rem;
   font-weight: 700;
-  opacity: 0.9;
-  transition: opacity 0.2s;
+  opacity: 0.88;
+  transition: opacity 0.2s, background 0.2s;
 }
-.topbar-social a:hover { opacity: 1; }
+.topbar-social a:hover { opacity: 1; background: rgba(255,255,255,0.12); }
 .topbar-contact {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 2rem;
 }
 .topbar-contact a {
   display: flex;
   align-items: center;
-  gap: 6px;
-  opacity: 0.9;
+  gap: 7px;
+  opacity: 0.92;
+  font-size: 0.86rem;
 }
 .topbar-contact a:hover { opacity: 1; }
-.topbar-contact .tc-icon {
-  width: 18px; height: 18px;
-  background: rgba(255,255,255,0.18);
+.tc-icon {
+  width: 20px; height: 20px;
+  background: rgba(255,255,255,0.15);
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+  flex-shrink: 0;
 }
+.tc-icon svg { width: 10px; height: 10px; fill: currentColor; }
 
 /* ─── Navbar ─────────────────────────────────────────────────── */
 .navbar-wrap {
@@ -131,13 +148,13 @@ button { cursor: pointer; font-family: inherit; }
   top: 0;
   z-index: 100;
   background: var(--white);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 88px;
+  height: 82px;
   gap: 2rem;
 }
 
@@ -147,30 +164,25 @@ button { cursor: pointer; font-family: inherit; }
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  text-decoration: none;
 }
-.brand-logo-ring {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  background: #f5f0e8;
+.brand-logo-img {
+  width: 64px;
+  height: auto;
 }
 .brand-text strong {
   display: block;
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: 1.2rem;
-  letter-spacing: 0.04em;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
   color: var(--text);
   line-height: 1.1;
 }
 .brand-text small {
   display: block;
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
   color: var(--muted);
   text-transform: uppercase;
 }
@@ -180,20 +192,23 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 0;
+  flex: 1;
+  justify-content: center;
 }
 .main-nav li a {
   display: block;
-  padding: 0 18px;
-  font-size: 0.97rem;
+  padding: 0 16px;
+  font-size: 0.96rem;
   font-weight: 600;
   color: var(--text);
   position: relative;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 .main-nav li a::after {
   content: '';
   position: absolute;
-  bottom: -4px; left: 18px; right: 18px;
+  bottom: -6px; left: 16px; right: 16px;
   height: 2px;
   background: var(--green);
   transform: scaleX(0);
@@ -207,17 +222,18 @@ button { cursor: pointer; font-family: inherit; }
 
 /* Hamburger */
 .menu-btn {
-  width: 54px; height: 54px;
+  width: 52px; height: 52px;
   background: var(--green);
   color: var(--white);
   border: none;
   border-radius: 8px;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  cursor: pointer;
 }
+.menu-btn svg { width: 22px; height: 22px; stroke: white; fill: none; stroke-width: 2.5; stroke-linecap: round; }
 
 /* ─── Hero ───────────────────────────────────────────────────── */
 .hero {
@@ -522,11 +538,15 @@ button { cursor: pointer; font-family: inherit; }
   margin-bottom: 18px;
 }
 .tour-highlight::before {
-  content: '❝❝';
-  color: var(--green);
-  font-size: 1rem;
-  line-height: 1;
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12' fill='%231b6b3a'%3E%3Cpath d='M0 0h5v5H3c0 2 1 4 3 5H3C1 8 0 5 0 3V0zm8 0h5v5h-2c0 2 1 4 3 5h-3C9 8 8 5 8 3V0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
   flex-shrink: 0;
+  margin-top: 3px;
 }
 .tour-card-footer {
   display: flex;

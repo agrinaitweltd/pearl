@@ -7,13 +7,23 @@ function Footer() {
       <div className="container">
         <div className="footer-cta">
           <div className="footer-cta-left">
-            <span className="footer-cta-icon">🚐</span>
+            <span className="footer-cta-icon">
+              <svg viewBox="0 0 64 48" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="56" height="42" aria-hidden="true">
+                <rect x="4" y="14" width="44" height="26" rx="4"/>
+                <circle cx="14" cy="40" r="5"/>
+                <circle cx="38" cy="40" r="5"/>
+                <path d="M4 20h44M4 14l8-10h24l8 10"/>
+                <path d="M52 22h6a2 2 0 012 2v8a2 2 0 01-2 2h-6"/>
+              </svg>
+            </span>
             <div>
               <h3>Let Us Create Your Tailor-Made Trip</h3>
               <p>Tailor Your Perfect Ugandan Adventure With Expert Planning.</p>
             </div>
           </div>
-          <span className="footer-cta-plane">✈</span>
+          <span className="footer-cta-plane" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="white" opacity="0.22" width="28" height="28"><path d="M21 3L3 10.5l6.75 2.75L12 21l2.75-6.75L21 3z"/></svg>
+          </span>
           <Link className="btn btn-outline" to="/contact">Let&apos;s Get Started</Link>
         </div>
       </div>
@@ -25,7 +35,12 @@ function Footer() {
             {/* Brand col */}
             <div className="footer-brand">
               <div className="footer-brand-logo">
-                <div className="ring">🦍</div>
+                <div className="ring">
+                  <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28" aria-hidden="true">
+                    <path d="M18 4 C14 7 12 13 14 18 C10 20 9 26 13 29 C15 33 20 35 24 32 C27 35 32 33 33 29 C36 25 34 19 31 17 C34 13 32 7 28 6 C26 2 21 1 18 4Z" fill="#c9a96e" opacity="0.85"/>
+                    <circle cx="18" cy="17" r="3" fill="white" opacity="0.9"/>
+                  </svg>
+                </div>
                 <div>
                   <strong>Pearl Land Safaris</strong>
                   <small>UGANDA TOURS &amp; SAFARIS</small>
@@ -73,21 +88,27 @@ function Footer() {
             <div className="footer-col">
               <h4>Contact Us</h4>
               <div className="footer-contact-item">
-                <div className="fci-icon">📞</div>
+                <div className="fci-icon">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" width="12" height="12" aria-hidden="true"><path d="M3 1h3l1.5 4-2 1.5a9 9 0 003 3L10 7.5l4 1.5v3a1 1 0 01-1 1C5.5 13 3 5.5 3 2a1 1 0 011-1h-1z"/></svg>
+                </div>
                 <div className="fci-text">
                   <small>Call / WhatsApp</small>
                   <strong>+256 762 378 870</strong>
                 </div>
               </div>
               <div className="footer-contact-item">
-                <div className="fci-icon">✉</div>
+                <div className="fci-icon">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" width="12" height="12" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 3l7 6 7-6"/></svg>
+                </div>
                 <div className="fci-text">
                   <small>Email Address</small>
                   <strong>info@pearllandsafaris.com</strong>
                 </div>
               </div>
               <div className="footer-contact-item">
-                <div className="fci-icon">📍</div>
+                <div className="fci-icon">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" width="12" height="12" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/></svg>
+                </div>
                 <div className="fci-text">
                   <small>Visit Office</small>
                   <strong>Kampala, Uganda</strong>

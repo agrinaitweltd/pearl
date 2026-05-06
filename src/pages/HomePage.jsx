@@ -88,19 +88,22 @@ export default function HomePage() {
         <div className="container search-bar-wrap">
           <div className="search-bar">
             <div className="sb-field">
-              <span className="sb-label"><span className="sb-icon">📍</span> Destination <span className="sb-chevron">▾</span></span>
+              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/></svg></span> Destination <span className="sb-chevron">▾</span></span>
               <span className="sb-value">All Parks</span>
             </div>
             <div className="sb-field">
-              <span className="sb-label"><span className="sb-icon">🦁</span> Safari Comfort <span className="sb-chevron">▾</span></span>
+              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="5"/><path d="M5 8a3 3 0 006 0"/><circle cx="6" cy="6.5" r="0.8" fill="currentColor"/><circle cx="10" cy="6.5" r="0.8" fill="currentColor"/></svg></span> Safari Comfort <span className="sb-chevron">▾</span></span>
               <span className="sb-value">All</span>
             </div>
             <div className="sb-field">
-              <span className="sb-label"><span className="sb-icon">🕐</span> Days <span className="sb-chevron">▾</span></span>
+              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg></span> Days <span className="sb-chevron">▾</span></span>
               <span className="sb-value">All</span>
             </div>
             <div className="sb-btn-wrap">
-              <Link to="/tour-packages" className="btn">🔍 Search</Link>
+              <Link to="/tour-packages" className="btn">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" width="15" height="15" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M11 11l3 3"/></svg>
+                Search
+              </Link>
             </div>
           </div>
         </div>
@@ -134,7 +137,7 @@ export default function HomePage() {
                 <span className={`tour-badge${i === 1 ? ' featured' : ''}`}>{tour.tier}</span>
                 <div className="tour-card-body">
                   <p className="tour-route">
-                    <span className="tour-pin">📍</span> {tour.route}
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" width="12" height="12" className="tour-pin" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/></svg> {tour.route}
                   </p>
                   <h3>{tour.title}</h3>
                   <p className="tour-highlight">{tour.description}</p>
@@ -168,7 +171,7 @@ export default function HomePage() {
 
           {/* Right: text */}
           <div className="about-right">
-            <span className="script">🌿 Where Adventure Meets The Wild!</span>
+            <span className="script">Where Adventure Meets The Wild!</span>
             <h2>Discover The Wonders Of Uganda</h2>
             <p>
               At Pearl Land Safaris, we craft unforgettable safari experiences that immerse you in
@@ -179,12 +182,16 @@ export default function HomePage() {
 
             <div className="about-features">
               <div className="about-feat">
-                <div className="about-feat-icon"><span className="about-feat-emoji">🏕️</span></div>
+                <div className="about-feat-icon">
+                  <svg viewBox="0 0 36 36" fill="none" stroke="#c9a96e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="36" height="36" aria-hidden="true"><path d="M4 28 L18 6 L32 28 Z"/><path d="M10 28 L18 14 L26 28"/><line x1="18" y1="6" x2="18" y2="2"/></svg>
+                </div>
                 <h3>Low Price &amp; Friendly</h3>
                 <p>We offer the best prices for our tour packages so you can enjoy even budget-friendly safaris.</p>
               </div>
               <div className="about-feat">
-                <div className="about-feat-icon"><span className="about-feat-emoji">🧭</span></div>
+                <div className="about-feat-icon">
+                  <svg viewBox="0 0 36 36" fill="none" stroke="#c9a96e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="36" height="36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><path d="M18 4v4M18 28v4M4 18h4M28 18h4"/><path d="M23 13l-8 5-3 8 8-5 3-8z" fill="#c9a96e" opacity="0.35"/></svg>
+                </div>
                 <h3>Trusted Travel Guide</h3>
                 <p>Our staff are professional and trustworthy — your safety and comfort are our top priority.</p>
               </div>
@@ -338,10 +345,13 @@ export default function HomePage() {
                     loading="lazy"
                     style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }}
                   />
-                  <span className="blog-tag">🏷 Safari Tip</span>
+                  <span className="blog-tag">Safari Tip</span>
                 </div>
                 <div className="blog-body">
-                  <p className="blog-date">📅 {post.date}</p>
+                  <p className="blog-date">
+                    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" width="13" height="13" aria-hidden="true"><rect x="1" y="2" width="12" height="11" rx="1"/><path d="M1 6h12M5 1v3M9 1v3"/></svg>
+                    {post.date}
+                  </p>
                   <h3>{post.title}</h3>
                   <a href="#" className="read-more">
                     Read More <span className="read-more-line" />——→

@@ -34,26 +34,10 @@ export const featuredTours = [
 ]
 
 export const reasonCards = [
-  {
-    title: 'Luxury & Budget-Friendly Safaris',
-    text: 'Tailored options for premium escapes and value-driven itineraries.',
-    icon: '⛺',
-  },
-  {
-    title: 'Expert Wildlife Guides',
-    text: 'Local, licensed guides with deep park and conservation knowledge.',
-    icon: '🧭',
-  },
-  {
-    title: 'Customizable Itineraries',
-    text: 'Private departures with flexible travel pacing and experiences.',
-    icon: '🗺️',
-  },
-  {
-    title: 'Sustainable & Eco-Friendly Travel',
-    text: 'Responsible tourism supporting communities and biodiversity.',
-    icon: '🌿',
-  },
+  { title: 'Luxury & Budget-Friendly Safaris', text: 'Tailored options for premium escapes and value-driven itineraries.' },
+  { title: 'Expert Wildlife Guides', text: 'Local, licensed guides with deep park and conservation knowledge.' },
+  { title: 'Customizable Itineraries', text: 'Private departures with flexible travel pacing and experiences.' },
+  { title: 'Sustainable & Eco-Friendly Travel', text: 'Responsible tourism supporting communities and biodiversity.' },
 ]
 
 export const destinations = [
