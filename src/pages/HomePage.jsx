@@ -186,7 +186,7 @@ export default function HomePage() {
                     {tour.route}
                   </p>
                   <h3>{tour.title}</h3>
-                  <p className="tour-highlight">{tour.description}</p>
+                  <p className="tour-highlight">{tour.highlights ? tour.highlights[0] : tour.description}</p>
                   <div className="tour-card-footer">
                     <p className="tour-price">Starting From <strong>{tour.price}</strong></p>
                     <Link to="/tour-packages" className="tour-arrow-btn" aria-label={`View ${tour.title}`}>
