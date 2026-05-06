@@ -6,11 +6,11 @@ function Navbar() {
     <header className="navbar-wrap">
       <div className="container navbar-inner">
         <NavLink to="/" className="brand" aria-label="Pearl Land Safaris home">
-          <span className="brand-mark">🦍</span>
-          <span>
-            <strong>Pearl Land</strong>
-            <small>SAFARIS</small>
-          </span>
+          <div className="brand-logo-ring">🦍</div>
+          <div className="brand-text">
+            <strong>Pearl Land Safaris</strong>
+            <small>UGANDA TOURS &amp; SAFARIS</small>
+          </div>
         </NavLink>
 
         <nav aria-label="Main navigation">
@@ -19,7 +19,7 @@ function Navbar() {
               <li key={item.path}>
                 <NavLink
                   to={item.path}
-                  className={({ isActive }) => (isActive ? 'active-link' : '')}
+                  className={({ isActive }) => (isActive ? 'active-link' : undefined)}
                 >
                   {item.label}
                 </NavLink>
@@ -29,7 +29,7 @@ function Navbar() {
         </nav>
 
         <button className="menu-btn" type="button" aria-label="Open menu">
-          ≡
+          ☰
         </button>
       </div>
     </header>

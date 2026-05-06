@@ -8,25 +8,28 @@ export const navLinks = [
 
 export const featuredTours = [
   {
-    route: 'Entebbe -> Bwindi -> Entebbe',
+    route: 'Entebbe → Bwindi → Entebbe',
     title: '3-Day Gorilla Trekking Escape',
     description: 'Meet mountain gorillas in Bwindi with expert trackers.',
     price: '$1,450.00',
-    tier: 'Premium',
+    tier: 'Mid-Range',
+    image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=700&q=80',
   },
   {
-    route: 'Entebbe -> Queen Elizabeth -> Entebbe',
+    route: 'Entebbe → Queen Elizabeth → Entebbe',
     title: '4-Day Big Five Wildlife Safari',
     description: 'Game drives, crater lakes, and a Kazinga boat cruise.',
     price: '$980.00',
-    tier: 'Classic',
+    tier: 'Mid-Range',
+    image: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=700&q=80',
   },
   {
-    route: 'Entebbe -> Murchison Falls -> Entebbe',
+    route: 'Entebbe → Murchison Falls → Kampala',
     title: '5-Day Nile & Savannah Adventure',
     description: 'Track giraffes and elephants near the world-famous falls.',
     price: '$1,230.00',
-    tier: 'Classic',
+    tier: 'Mid-Range',
+    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=700&q=80',
   },
 ]
 
