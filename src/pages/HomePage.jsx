@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { blogCards, destinations, featuredTours, reasonCards, testimonials } from '../data/siteData'
 
@@ -8,12 +8,43 @@ const HERO_SLIDES = [
   'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1800&q=80',
 ]
 
+const TYPING_WORDS = ['Treks', 'Adventures', 'Journeys', 'Expeditions', 'Escapes']
+
 const WHY_ICONS = [
   'https://img.icons8.com/ios/100/c9a96e/trekking.png',
   'https://img.icons8.com/ios/100/c9a96e/love-bird.png',
   'https://img.icons8.com/ios/100/c9a96e/waypoint-map.png',
   'https://img.icons8.com/ios/100/c9a96e/leaf.png',
 ]
+
+/* Typing animation hook */
+function useTyping(words, { typeSpeed = 90, deleteSpeed = 55, pauseMs = 1800 } = {}) {
+  const [displayed, setDisplayed] = useState('')
+  const [wordIdx, setWordIdx] = useState(0)
+  const [typing, setTyping] = useState(true)
+  const timeout = useRef(null)
+
+  useEffect(() => {
+    const word = words[wordIdx]
+    if (typing) {
+      if (displayed.length < word.length) {
+        timeout.current = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), typeSpeed)
+      } else {
+        timeout.current = setTimeout(() => setTyping(false), pauseMs)
+      }
+    } else {
+      if (displayed.length > 0) {
+        timeout.current = setTimeout(() => setDisplayed(displayed.slice(0, -1)), deleteSpeed)
+      } else {
+        setWordIdx((i) => (i + 1) % words.length)
+        setTyping(true)
+      }
+    }
+    return () => clearTimeout(timeout.current)
+  }, [displayed, typing, wordIdx, words, typeSpeed, deleteSpeed, pauseMs])
+
+  return displayed
+}
 
 function StarRating({ count = 5 }) {
   return <span className="review-stars">{'★'.repeat(count)}</span>
@@ -22,6 +53,8 @@ function StarRating({ count = 5 }) {
 export default function HomePage() {
   const [slide, setSlide] = useState(0)
   const [activeTesti, setActiveTesti] = useState(0)
+
+  const typedWord = useTyping(TYPING_WORDS)
 
   const prevSlide = () => setSlide((s) => (s === 0 ? HERO_SLIDES.length - 1 : s - 1))
   const nextSlide = () => setSlide((s) => (s + 1) % HERO_SLIDES.length)
@@ -41,37 +74,43 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Airplane dashed-path SVG */}
+        {/* Airplane dashed-path decoration */}
         <svg
           className="hero-plane"
-          width="220"
-          height="120"
-          viewBox="0 0 220 120"
+          viewBox="0 0 260 130"
           fill="none"
           aria-hidden="true"
         >
           <path
-            d="M10 110 Q60 10 180 20"
+            d="M10 120 Q80 20 220 30"
             stroke="white"
-            strokeWidth="1.5"
-            strokeDasharray="6 5"
-            opacity="0.55"
+            strokeWidth="1.4"
+            strokeDasharray="7 5"
+            opacity="0.5"
           />
-          <text x="185" y="18" fontSize="22" fill="white" opacity="0.85">✈</text>
+          <g transform="translate(218,18) rotate(-12)" opacity="0.9">
+            <path d="M0 0 L10 -4 L8 0 L10 4 Z" fill="white"/>
+            <path d="M3 -2 L7 -6 L8 -5 L5 -1 Z" fill="white" opacity="0.8"/>
+            <path d="M3 2 L7 6 L8 5 L5 1 Z" fill="white" opacity="0.8"/>
+          </g>
         </svg>
 
         {/* Content */}
         <div className="container hero-content">
           <span className="script">Unforgettable Safari Adventures</span>
           <h1>
-            Safari&nbsp;
-            <span className="h1-italic">Tours</span>
+            <span>Safari&nbsp;</span>
+            <span className="h1-typed">{typedWord}</span>
             <span className="h1-cursor" aria-hidden="true" />
           </h1>
           <ul className="hero-points">
             {['Expert Local Guides', 'Tailored Safari Experiences', 'Sustainable & Ethical Tourism'].map((pt) => (
               <li key={pt}>
-                <span className="hero-check">✓</span>
+                <span className="hero-check">
+                  <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" width="10" height="10">
+                    <polyline points="1.5,6 4.5,9 10.5,3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
                 {pt}
               </li>
             ))}
@@ -80,23 +119,27 @@ export default function HomePage() {
 
         {/* Slide arrows */}
         <div className="hero-arrows">
-          <button className="hero-arrow" onClick={prevSlide} aria-label="Previous slide">←</button>
-          <button className="hero-arrow" onClick={nextSlide} aria-label="Next slide">→</button>
+          <button className="hero-arrow" onClick={prevSlide} aria-label="Previous slide">
+            <svg viewBox="0 0 20 20" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" width="16" height="16" aria-hidden="true"><path d="M13 4l-6 6 6 6"/></svg>
+          </button>
+          <button className="hero-arrow" onClick={nextSlide} aria-label="Next slide">
+            <svg viewBox="0 0 20 20" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" width="16" height="16" aria-hidden="true"><path d="M7 4l6 6-6 6"/></svg>
+          </button>
         </div>
 
         {/* Search bar */}
         <div className="container search-bar-wrap">
           <div className="search-bar">
             <div className="sb-field">
-              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/></svg></span> Destination <span className="sb-chevron">▾</span></span>
+              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/></svg></span> Destination <span className="sb-chevron">&#8964;</span></span>
               <span className="sb-value">All Parks</span>
             </div>
             <div className="sb-field">
-              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="5"/><path d="M5 8a3 3 0 006 0"/><circle cx="6" cy="6.5" r="0.8" fill="currentColor"/><circle cx="10" cy="6.5" r="0.8" fill="currentColor"/></svg></span> Safari Comfort <span className="sb-chevron">▾</span></span>
+              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="5"/><path d="M5 8a3 3 0 006 0"/><circle cx="6" cy="6.5" r="0.8" fill="currentColor"/><circle cx="10" cy="6.5" r="0.8" fill="currentColor"/></svg></span> Safari Comfort <span className="sb-chevron">&#8964;</span></span>
               <span className="sb-value">All</span>
             </div>
             <div className="sb-field">
-              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg></span> Days <span className="sb-chevron">▾</span></span>
+              <span className="sb-label"><span className="sb-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg></span> Days <span className="sb-chevron">&#8964;</span></span>
               <span className="sb-value">All</span>
             </div>
             <div className="sb-btn-wrap">

@@ -247,7 +247,7 @@ button { cursor: pointer; font-family: inherit; }
 /* ─── Hero ───────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 680px;
+  min-height: 620px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -260,38 +260,39 @@ button { cursor: pointer; font-family: inherit; }
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 1.2s ease;
 }
 .hero-slide.active { opacity: 1; }
-/* Gradient: dark left → lighter right exactly like reference */
+/* Even dark overlay matching reference */
 .hero-slide::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    105deg,
-    rgba(10,22,18,0.90) 0%,
-    rgba(10,22,18,0.65) 38%,
-    rgba(10,22,18,0.20) 70%,
-    rgba(200,208,200,0.55) 100%
+    to bottom,
+    rgba(6,18,12,0.52) 0%,
+    rgba(6,18,12,0.45) 55%,
+    rgba(6,18,12,0.68) 100%
   );
 }
 
-/* Airplane SVG path decoration */
+/* Airplane dashed-path decoration */
 .hero-plane {
   position: absolute;
-  top: 48px; left: 140px;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
   z-index: 3;
-  opacity: 0.9;
   pointer-events: none;
 }
 
 /* Slide nav arrows */
 .hero-arrows {
   position: absolute;
-  bottom: 145px;
+  bottom: 168px;
   right: 40px;
   z-index: 5;
   display: flex;
@@ -300,52 +301,57 @@ button { cursor: pointer; font-family: inherit; }
 .hero-arrow {
   width: 46px; height: 46px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.4);
   color: #fff;
-  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s;
 }
-.hero-arrow:hover { background: rgba(255,255,255,0.32); }
+.hero-arrow:hover { background: rgba(255,255,255,0.30); }
 
 .hero-content {
   position: relative;
   z-index: 4;
-  padding: 130px 0 60px;
+  padding: 110px 0 72px;
   color: var(--white);
+  text-align: center;
 }
 .hero-content .script {
-  font-size: 2.1rem;
+  font-size: 2rem;
   color: var(--gold);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  display: block;
 }
 .hero-content h1 {
   font-family: var(--font-body);
-  font-weight: 800;
-  font-size: clamp(3.5rem, 6vw, 6.5rem);
-  line-height: 0.95;
-  margin-bottom: 30px;
+  font-weight: 900;
+  font-size: clamp(3.4rem, 5.5vw, 6rem);
+  line-height: 1;
+  margin-bottom: 28px;
   display: flex;
   align-items: baseline;
-  gap: 18px;
+  gap: 16px;
+  justify-content: center;
 }
-.hero-content h1 .h1-italic {
+/* Typed animated gold word */
+.h1-typed {
   font-family: var(--font-script);
   font-weight: 700;
   color: var(--gold);
-  font-size: clamp(3.8rem, 6.5vw, 7rem);
+  font-size: clamp(3.6rem, 6vw, 6.5rem);
   line-height: 1;
+  min-width: 2ch;
+  display: inline-block;
 }
-/* Cursor blink after the italic word */
-.hero-content h1 .h1-cursor {
+/* Cursor blink */
+.h1-cursor {
   display: inline-block;
   width: 3px;
-  height: 0.8em;
+  height: 0.75em;
   background: var(--white);
-  margin-left: 4px;
+  margin-left: 2px;
   vertical-align: middle;
   animation: blink 1s step-end infinite;
 }
@@ -353,25 +359,25 @@ button { cursor: pointer; font-family: inherit; }
 
 .hero-points {
   display: flex;
-  gap: 28px;
+  gap: 32px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .hero-points li {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.02rem;
+  gap: 9px;
+  font-size: 1rem;
   font-weight: 500;
+  color: var(--white);
 }
 .hero-check {
-  width: 22px; height: 22px;
+  width: 24px; height: 24px;
   border-radius: 50%;
   background: var(--green);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  color: #fff;
   flex-shrink: 0;
 }
 
