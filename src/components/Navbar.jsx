@@ -7,10 +7,6 @@ function Navbar() {
       <div className="container navbar-inner">
         <NavLink to="/" className="brand" aria-label="Pearl Land Safaris home">
           <img src="/logo.png" alt="Pearl Land Safaris" className="brand-logo-img" loading="eager" />
-          <div className="brand-text">
-            <strong>Pearl Land</strong>
-            <small>TOURS &amp; SAFARIS</small>
-          </div>
         </NavLink>
 
         <nav aria-label="Main navigation">
