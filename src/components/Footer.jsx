@@ -38,12 +38,7 @@ function Footer() {
             {/* Brand col */}
             <div className="footer-brand">
               <div className="footer-brand-logo">
-                <div className="ring">
-                  <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28" aria-hidden="true">
-                    <path d="M18 4 C14 7 12 13 14 18 C10 20 9 26 13 29 C15 33 20 35 24 32 C27 35 32 33 33 29 C36 25 34 19 31 17 C34 13 32 7 28 6 C26 2 21 1 18 4Z" fill="#c9a96e" opacity="0.85"/>
-                    <circle cx="18" cy="17" r="3" fill="white" opacity="0.9"/>
-                  </svg>
-                </div>
+                <img src="/logo.png" alt="Pearl Land Safaris" className="footer-logo-img" loading="lazy" />
                 <div>
                   <strong>Pearl Land Safaris</strong>
                   <small>UGANDA TOURS &amp; SAFARIS</small>
