@@ -76,6 +76,18 @@ button { cursor: pointer; font-family: inherit; }
   border: 2px solid var(--white);
 }
 .btn-outline:hover { background: rgba(255,255,255,0.12); transform: none; }
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.75);
+  letter-spacing: 0.08em;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--white); transform: none; }
+.btn-dark {
+  background: var(--green-deep);
+  color: var(--white);
+}
+.btn-dark:hover { background: var(--bg-dark); }
 
 /* ─── Topbar ─────────────────────────────────────────────────── */
 .topbar {
@@ -486,6 +498,13 @@ button { cursor: pointer; font-family: inherit; }
 }
 .pkg-arrow.active,
 .pkg-arrow:hover { background: var(--green); color: #fff; border-color: var(--green); }
+.pkg-arrow-next {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  width: 40px; height: 40px;
+}
+.pkg-arrow-next:hover { background: var(--green-dark); }
 
 .tour-grid {
   display: grid;
@@ -503,6 +522,9 @@ button { cursor: pointer; font-family: inherit; }
 }
 .tour-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(10,30,20,0.13); }
 
+/* image wrapper so badge can be positioned relative to it */
+.tour-card-image { position: relative; }
+
 .tour-card-img {
   width: 100%;
   height: 200px;
@@ -511,20 +533,22 @@ button { cursor: pointer; font-family: inherit; }
   background: #d8e2dc;
 }
 
-/* Tier badge top-right */
+/* Tier badge at bottom-right of image overlapping body */
 .tour-badge {
   position: absolute;
-  top: 12px; right: 12px;
+  bottom: -14px; right: 0;
   background: var(--white);
   border: 1px solid var(--border);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 4px 12px;
-  border-radius: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 4px 0 0 4px;
   color: var(--text);
+  box-shadow: 0 2px 8px rgba(10,30,20,0.08);
 }
-.tour-badge.featured { background: var(--green); color: #fff; border-color: var(--green); }
+.tour-badge-green { background: var(--green); color: #fff; border-color: var(--green); }
 
 .tour-card-body { padding: 20px; }
 .tour-route {
@@ -573,18 +597,17 @@ button { cursor: pointer; font-family: inherit; }
 .tour-price { font-size: 0.9rem; color: var(--muted); }
 .tour-price strong { color: var(--text); font-weight: 700; }
 .tour-arrow-btn {
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: transparent;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1rem;
   color: var(--green);
-  transition: all 0.2s;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
 }
-.tour-arrow-btn:hover { background: var(--green); color: #fff; border-color: var(--green); }
+.tour-arrow-btn:hover { color: var(--green-dark); }
 
 /* ─── About / Why section ─────────────────────────────────────── */
 .about-section { background: var(--white); }
@@ -781,6 +804,13 @@ button { cursor: pointer; font-family: inherit; }
 .why-inner {
   padding: 80px 0 80px;
 }
+.why-mountain {
+  flex-shrink: 0;
+  width: 62px;
+  height: 50px;
+  margin-top: 4px;
+  opacity: 0.8;
+}
 .why-top {
   display: flex;
   align-items: flex-start;
@@ -788,13 +818,18 @@ button { cursor: pointer; font-family: inherit; }
   gap: 2rem;
   margin-bottom: 44px;
 }
-.why-top .script { color: rgba(255,255,255,0.85); }
 .why-top h2 {
   font-weight: 800;
   font-size: clamp(1.6rem, 2.5vw, 2.5rem);
   color: var(--white);
   line-height: 1.2;
-  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.why-sub {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 520px;
 }
 .why-heading-col { flex: 1; }
 .why-cards {
@@ -970,19 +1005,39 @@ button { cursor: pointer; font-family: inherit; }
   font-family: var(--font-serif);
   line-height: 1;
 }
+/* green quote box */
+.testi-quote-box {
+  margin-left: auto;
+  width: 44px; height: 44px;
+  background: var(--green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
 /* ─── Action / CTA band ──────────────────────────────────────── */
 .cta-section {
-  background: linear-gradient(
-    115deg,
-    #0d2820 0%,
-    #163825 40%,
-    #2c5c3c 70%,
-    #617060 100%
-  );
+  position: relative;
+  background-size: cover;
+  background-position: center;
   padding: 80px 0;
 }
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10,24,18,0.92) 0%,
+    rgba(10,24,18,0.75) 45%,
+    rgba(10,24,18,0.35) 75%,
+    rgba(10,24,18,0.1) 100%
+  );
+}
 .cta-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1057,7 +1112,13 @@ button { cursor: pointer; font-family: inherit; }
   color: var(--text);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+}
+.read-more-dash {
+  display: inline-block;
+  width: 28px; height: 1.5px;
+  background: currentColor;
+  flex-shrink: 0;
 }
 .read-more-line { display: inline-block; width: 34px; height: 1.5px; background: var(--text); }
 .read-more:hover { color: var(--green); }
