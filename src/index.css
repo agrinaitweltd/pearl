@@ -84,40 +84,45 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 0.87rem;
   position: relative;
   z-index: 10;
-  /* jagged bottom wave via SVG mask */
-  padding-bottom: 28px;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='80' viewBox='0 0 1440 80'%3E%3Crect width='1440' height='55' fill='black'/%3E%3Cpath d='M0 55 Q20 80 40 55 Q60 30 80 55 Q100 80 120 55 Q140 30 160 55 Q180 80 200 55 Q220 30 240 55 Q260 80 280 55 Q300 30 320 55 Q340 80 360 55 Q380 30 400 55 Q420 80 440 55 Q460 30 480 55 Q500 80 520 55 Q540 30 560 55 Q580 80 600 55 Q620 30 640 55 Q660 80 680 55 Q700 30 720 55 Q740 80 760 55 Q780 30 800 55 Q820 80 840 55 Q860 30 880 55 Q900 80 920 55 Q940 30 960 55 Q980 80 1000 55 Q1020 30 1040 55 Q1060 80 1080 55 Q1100 30 1120 55 Q1140 80 1160 55 Q1180 30 1200 55 Q1220 80 1240 55 Q1260 30 1280 55 Q1300 80 1320 55 Q1340 30 1360 55 Q1380 80 1400 55 Q1420 30 1440 55 L1440 0 L0 0 Z' fill='black'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='80' viewBox='0 0 1440 80'%3E%3Crect width='1440' height='55' fill='black'/%3E%3Cpath d='M0 55 Q20 80 40 55 Q60 30 80 55 Q100 80 120 55 Q140 30 160 55 Q180 80 200 55 Q220 30 240 55 Q260 80 280 55 Q300 30 320 55 Q340 80 360 55 Q380 30 400 55 Q420 80 440 55 Q460 30 480 55 Q500 80 520 55 Q540 30 560 55 Q580 80 600 55 Q620 30 640 55 Q660 80 680 55 Q700 30 720 55 Q740 80 760 55 Q780 30 800 55 Q820 80 840 55 Q860 30 880 55 Q900 80 920 55 Q940 30 960 55 Q980 80 1000 55 Q1020 30 1040 55 Q1060 80 1080 55 Q1100 30 1120 55 Q1140 80 1160 55 Q1180 30 1200 55 Q1220 80 1240 55 Q1260 30 1280 55 Q1300 80 1320 55 Q1340 30 1360 55 Q1380 80 1400 55 Q1420 30 1440 55 L1440 0 L0 0 Z' fill='black'/%3E%3C/svg%3E");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  padding-bottom: 0;
+}
+/* torn-paper white edge along the bottom */
+.topbar::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 22' preserveAspectRatio='none'%3E%3Cpath d='M0 22 L0 12 L18 0 L32 10 L50 2 L60 14 L74 4 L88 16 L100 6 L116 18 L128 5 L142 15 L158 3 L170 13 L186 1 L198 11 L212 4 L226 16 L240 7 L252 18 L268 5 L280 14 L296 2 L310 12 L324 3 L338 15 L352 6 L364 17 L380 4 L392 13 L406 1 L420 11 L436 5 L448 16 L462 7 L476 18 L490 3 L504 14 L518 2 L532 13 L546 5 L560 17 L572 8 L586 19 L600 4 L614 15 L626 3 L640 12 L656 2 L668 14 L682 6 L696 17 L710 4 L724 16 L736 7 L750 18 L764 5 L778 15 L792 3 L806 13 L820 1 L834 12 L848 4 L860 16 L874 7 L888 19 L900 6 L914 15 L928 3 L942 14 L956 5 L968 17 L982 8 L996 18 L1010 4 L1024 13 L1038 2 L1050 11 L1064 3 L1078 15 L1092 7 L1106 18 L1118 5 L1132 14 L1148 2 L1160 13 L1174 4 L1188 16 L1200 6 L1216 18 L1228 5 L1242 15 L1256 3 L1270 12 L1284 1 L1298 13 L1312 5 L1324 17 L1338 8 L1352 19 L1366 6 L1380 15 L1394 3 L1408 14 L1422 4 L1440 16 L1440 22 Z' fill='white'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 .topbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  height: 52px;
+  height: 50px;
 }
 .topbar-social {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   align-items: center;
 }
 .topbar-social a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px; height: 26px;
-  border: 1.5px solid rgba(255,255,255,0.45);
-  border-radius: 4px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  opacity: 0.88;
-  transition: opacity 0.2s, background 0.2s;
+  width: 20px;
+  height: 20px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
 }
-.topbar-social a:hover { opacity: 1; background: rgba(255,255,255,0.12); }
+.topbar-social a svg { width: 18px; height: 18px; fill: white; }
+.topbar-social a:hover { opacity: 1; }
 .topbar-contact {
   display: flex;
   align-items: center;
@@ -128,25 +133,24 @@ button { cursor: pointer; font-family: inherit; }
   align-items: center;
   gap: 7px;
   opacity: 0.92;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
+  letter-spacing: 0.01em;
 }
 .topbar-contact a:hover { opacity: 1; }
 .tc-icon {
-  width: 20px; height: 20px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  opacity: 0.85;
 }
-.tc-icon svg { width: 10px; height: 10px; fill: currentColor; }
+.tc-icon svg { width: 14px; height: 14px; fill: white; }
 
 /* ─── Navbar ─────────────────────────────────────────────────── */
 .navbar-wrap {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 99;
   background: var(--white);
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
