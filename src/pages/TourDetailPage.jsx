@@ -41,8 +41,8 @@ export default function TourDetailPage() {
           <span className="tour-detail-badge">{tour.tier}</span>
           <h1>{tour.title}</h1>
           <p className="tour-detail-route">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" width="14" height="14">
-              <circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/>
+            <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14">
+              <path d="M8 1.5C6 1.5 4.5 3 4.5 5c0 2.5 3.5 7.5 3.5 7.5s3.5-5 3.5-7.5c0-2-1.5-3.5-3.5-3.5zm0 5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
             </svg>
             {tour.route}
           </p>
@@ -62,20 +62,20 @@ export default function TourDetailPage() {
           <div className="tour-detail-info">
             <div className="tour-detail-meta">
               <div className="tour-meta-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" width="20" height="20">
-                  <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+                <svg viewBox="0 0 24 24" fill="var(--green)" width="20" height="20">
+                  <path d="M19 4h-1V3a1 1 0 00-2 0v1H8V3a1 1 0 00-2 0v1H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11z"/>
                 </svg>
                 <span><strong>{tour.days} Days</strong> {tour.days - 1} Nights</span>
               </div>
               <div className="tour-meta-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" width="20" height="20">
-                  <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                <svg viewBox="0 0 24 24" fill="var(--green)" width="20" height="20">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
                 </svg>
                 <span>Flexible Start Dates</span>
               </div>
               <div className="tour-meta-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" width="20" height="20">
-                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+                <svg viewBox="0 0 24 24" fill="var(--green)" width="20" height="20">
+                  <path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5c0-2.3-4.7-3.5-7-3.5zm8 0c-.3 0-.6 0-1 .1 1.2.8 2 2 2 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z"/>
                 </svg>
                 <span>Private & Group Tours</span>
               </div>
@@ -118,8 +118,8 @@ export default function TourDetailPage() {
           <div className="tour-detail-booking">
             <div className="tour-booking-summary">
               <div className="tbs-header">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" width="20" height="20">
-                  <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
                 </svg>
                 <span>Your Safari Selection</span>
               </div>
@@ -127,19 +127,19 @@ export default function TourDetailPage() {
               <div className="tbs-details">
                 <span className="tbs-item">
                   <svg viewBox="0 0 24 24" fill="var(--gold)" width="14" height="14">
-                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="var(--bg-dark)" strokeWidth="1.5"/>
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 13.4l-3-1.8V7h1.5v5.8l2.2 1.3-.7 1.3z"/>
                   </svg>
                   {tour.days} Days
                 </span>
                 <span className="tbs-item">
                   <svg viewBox="0 0 24 24" fill="var(--gold)" width="14" height="14">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z"/>
                   </svg>
                   {tour.route}
                 </span>
                 <span className="tbs-item">
                   <svg viewBox="0 0 24 24" fill="var(--gold)" width="14" height="14">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    <path d="M12 17.3l-3.8 2 1-4.2-3.2-2.8 4.2-.4L12 8l1.8 3.9 4.2.4-3.2 2.8 1 4.2z"/>
                   </svg>
                   {tour.tier}
                 </span>
@@ -159,7 +159,7 @@ export default function TourDetailPage() {
               {submitted && (
                 <div className="form-success-banner">
                   <svg viewBox="0 0 24 24" fill="var(--green)" width="20" height="20">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.4-1.4L10 14.2l7.6-7.6L19 8l-9 9z"/>
                   </svg>
                   <span>Thank you! We'll be in touch within 24 hours.</span>
                 </div>
@@ -168,8 +168,8 @@ export default function TourDetailPage() {
               <form className="tour-booking-form" onSubmit={handleSubmit}>
                 <div className="tbf-section">
                   <h5 className="tbf-section-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
-                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                      <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/>
                     </svg>
                     Contact Information
                   </h5>
@@ -220,8 +220,8 @@ export default function TourDetailPage() {
 
                 <div className="tbf-section">
                   <h5 className="tbf-section-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
-                      <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
                     </svg>
                     Travel Details
                   </h5>
@@ -270,8 +270,8 @@ export default function TourDetailPage() {
                 
                 <div className="tbf-section">
                   <h5 className="tbf-section-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                      <path d="M12 17.3l-3.8 2 1-4.2-3.2-2.8 4.2-.4L12 8l1.8 3.9 4.2.4-3.2 2.8 1 4.2z"/>
                     </svg>
                     Preferences
                   </h5>
@@ -301,8 +301,8 @@ export default function TourDetailPage() {
 
                 <div className="tbf-section">
                   <h5 className="tbf-section-title">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
-                      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
                     </svg>
                     Additional Information
                   </h5>
@@ -319,8 +319,8 @@ export default function TourDetailPage() {
                 </div>
 
                 <button type="submit" className="btn-book-safari">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="18" height="18">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path d="M12 4l-1.4 1.4 5.6 5.6H4v2h12.2l-5.6 5.6L12 20l8-8z"/>
                   </svg>
                   Get Your Free Quote
                 </button>
@@ -328,19 +328,19 @@ export default function TourDetailPage() {
                 <div className="tour-booking-features">
                   <span className="tbf-item">
                     <svg viewBox="0 0 24 24" fill="var(--green)" width="16" height="16">
-                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                      <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/>
                     </svg>
                     Free cancellation
                   </span>
                   <span className="tbf-item">
                     <svg viewBox="0 0 24 24" fill="var(--green)" width="16" height="16">
-                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                      <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/>
                     </svg>
                     24-hour response
                   </span>
                   <span className="tbf-item">
                     <svg viewBox="0 0 24 24" fill="var(--green)" width="16" height="16">
-                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                      <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/>
                     </svg>
                     No payment required
                   </span>
@@ -353,7 +353,7 @@ export default function TourDetailPage() {
               <p>Our safari experts are here to assist you.</p>
               <a href="tel:+256762378870" className="tour-help-link">
                 <svg viewBox="0 0 24 24" fill="var(--green)" width="18" height="18">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.5.6 3.6.1.3 0 .7-.3 1l-2.2 2.2z"/>
                 </svg>
                 +256 762 378 870
               </a>

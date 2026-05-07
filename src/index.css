@@ -2442,7 +2442,7 @@ button { cursor: pointer; font-family: inherit; }
 }
 .tbf-section-title svg {
   flex-shrink: 0;
-  stroke: var(--green);
+  fill: var(--green);
 }
 
 .tbf-field {
