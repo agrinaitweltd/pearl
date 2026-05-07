@@ -1171,11 +1171,25 @@ button { cursor: pointer; font-family: inherit; }
   justify-content: center;
   width: 74px;
   flex-shrink: 0;
+  position: relative;
+}
+.footer-cta-icon::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: -7px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.28);
 }
 .footer-cta-icon img {
   display: block;
   width: 100%;
   height: auto;
+  transform-origin: center bottom;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.18));
+  animation: footer-car-drive 3.2s ease-in-out infinite;
 }
 .footer-cta h3 {
   font-weight: 800;
@@ -1195,6 +1209,30 @@ button { cursor: pointer; font-family: inherit; }
   opacity: 0.25;
   font-size: 1.8rem;
   transform: rotate(-30deg);
+}
+
+@keyframes footer-car-drive {
+  0%, 100% {
+    transform: translateX(-6px) translateY(0) rotate(-1deg);
+  }
+  20% {
+    transform: translateX(2px) translateY(-1px) rotate(0deg);
+  }
+  45% {
+    transform: translateX(10px) translateY(1px) rotate(0.8deg);
+  }
+  65% {
+    transform: translateX(14px) translateY(-1px) rotate(0.3deg);
+  }
+  85% {
+    transform: translateX(4px) translateY(0) rotate(-0.6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-cta-icon img {
+    animation: none;
+  }
 }
 
 .footer-body {
