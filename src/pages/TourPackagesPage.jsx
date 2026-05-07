@@ -45,7 +45,7 @@ function TourCard({ tour }) {
         </ul>
         <div className="tour-card-footer">
           <p className="tour-price">Starting From <strong>{tour.price}</strong></p>
-          <Link to="/contact" className="tour-arrow-btn" aria-label={`Book ${tour.title}`}>
+          <Link to={`/tours/${tour.route}`} className="tour-arrow-btn" aria-label={`Book ${tour.title}`}>
             <svg viewBox="0 0 20 6" fill="none" width="44" height="10" aria-hidden="true">
               <line x1="0" y1="3" x2="14" y2="3" stroke="currentColor" strokeWidth="1.8"/>
               <path d="M11 0.5 L14 3 L11 5.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>

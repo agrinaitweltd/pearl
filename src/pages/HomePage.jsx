@@ -171,7 +171,7 @@ export default function HomePage() {
                   <p className="tour-highlight">{tour.highlights ? tour.highlights[0] : tour.description}</p>
                   <div className="tour-card-footer">
                     <p className="tour-price">Starting From <strong>{tour.price}</strong></p>
-                    <Link to="/tour-packages" className="tour-arrow-btn" aria-label={`View ${tour.title}`}>
+                    <Link to={`/tours/${tour.route}`} className="tour-arrow-btn" aria-label={`View ${tour.title}`}>
                       <svg viewBox="0 0 20 6" fill="none" aria-hidden="true" width="44" height="10"><line x1="0" y1="3" x2="14" y2="3" stroke="currentColor" strokeWidth="1.8"/><path d="M11 0.5 L14 3 L11 5.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
                     </Link>
                   </div>

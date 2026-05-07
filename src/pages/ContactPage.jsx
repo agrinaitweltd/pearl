@@ -1,6 +1,5 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { allTours } from '../data/siteData'
 
 const ENQUIRY_TYPES = [
   { key: 'safari',  label: 'Safari Booking',   desc: 'Plan a tailor-made trip' },
@@ -15,20 +14,8 @@ const EMPTY = { name:'', email:'', phone:'', country:'', adults:'', children:'',
 export default function ContactPage() {
   const [enquiry, setEnquiry] = useState(null)
   const [form, setForm] = useState(EMPTY)
-  const [selectedTour, setSelectedTour] = useState(null)
-  const formRef = useRef(null)
   
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
-  
-  const handleTourSelect = (tour) => {
-    setSelectedTour(tour)
-    setEnquiry('safari')
-    setForm({ ...EMPTY, tour: tour.title })
-    // Scroll to form smoothly
-    setTimeout(() => {
-      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, 100)
-  }
 
   return (
     <>
@@ -83,52 +70,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── Browse Safaris ─────────────────────────────────── */}
-      <section className="contact-safaris-section">
-        <div className="container">
-          <h2 className="section-title">Ready to Book Your Safari?</h2>
-          <p className="contact-safaris-intro">
-            Select a safari below to get started with your booking, or scroll down to fill out a custom enquiry form.
-          </p>
-          <div className="contact-safaris-grid">
-            {allTours.map((tour) => (
-              <button
-                key={tour.title}
-                type="button"
-                className="contact-safari-card"
-                onClick={() => handleTourSelect(tour)}
-              >
-                <div className="contact-safari-img-wrap">
-                  <img src={tour.image} alt={tour.title} className="contact-safari-img" />
-                  <span className="contact-safari-badge">{tour.tier}</span>
-                </div>
-                <div className="contact-safari-body">
-                  <h3>{tour.title}</h3>
-                  <p className="contact-safari-route">
-                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" width="12" height="12">
-                      <circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/>
-                    </svg>
-                    {tour.route}
-                  </p>
-                  <div className="contact-safari-footer">
-                    <span className="contact-safari-days">{tour.days} Days</span>
-                    <span className="contact-safari-price">From <strong>{tour.price}</strong></span>
-                  </div>
-                  <div className="contact-safari-cta">
-                    <span>Book This Safari</span>
-                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
-                      <path d="M5 10h10m-5-5l5 5-5 5"/>
-                    </svg>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Map + Form ─────────────────────────────────────── */}
-      <section className="contact-body-section" ref={formRef}>
+      <section className="contact-body-section">
         <div className="container contact-body-grid">
 
           {/* Map */}
@@ -148,25 +91,6 @@ export default function ContactPage() {
 
           {/* Form */}
           <div className="contact-form-col">
-            {selectedTour && (
-              <div className="selected-tour-banner">
-                <div className="selected-tour-info">
-                  <svg viewBox="0 0 24 24" fill="var(--green)" width="20" height="20">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                  </svg>
-                  <div>
-                    <strong>Selected Safari:</strong> {selectedTour.title}
-                    <span className="selected-tour-meta"> • {selectedTour.days} Days • {selectedTour.price}</span>
-                  </div>
-                </div>
-                <button type="button" className="selected-tour-clear" onClick={() => { setSelectedTour(null); setForm(EMPTY); setEnquiry(null) }}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
-                    <path d="M6 6l12 12M6 18L18 6"/>
-                  </svg>
-                </button>
-              </div>
-            )}
-            
             <h2 className="contact-section-title">Have Questions?</h2>
             <p className="contact-form-intro">
               Tell us what you&apos;re looking for and we&apos;ll get back to you within 24 hours.
@@ -221,9 +145,15 @@ export default function ContactPage() {
                     <label>Which tour are you interested in?</label>
                     <select value={form.tour} onChange={set('tour')}>
                       <option value="">Select a tour…</option>
-                      {allTours.map((t) => (
-                        <option key={t.title} value={t.title}>{t.title}</option>
-                      ))}
+                      <option>3-Day Gorilla Tracking Safari</option>
+                      <option>5-Day Big Five Safari</option>
+                      <option>7-Day Uganda Wildlife Adventure</option>
+                      <option>4-Day Chimpanzee Trekking</option>
+                      <option>6-Day Savannah & Primates Tour</option>
+                      <option>8-Day Ultimate Uganda Safari</option>
+                      <option>5-Day Murchison Falls Explorer</option>
+                      <option>3-Day Queen Elizabeth Safari</option>
+                      <option>4-Day Lake Mburo Experience</option>
                       <option>Other / Custom Safari</option>
                     </select>
                   </div>

@@ -6,6 +6,7 @@ import ContactPage from './pages/ContactPage'
 import DestinationsPage from './pages/DestinationsPage'
 import HomePage from './pages/HomePage'
 import TourPackagesPage from './pages/TourPackagesPage'
+import TourDetailPage from './pages/TourDetailPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/tour-packages" element={<TourPackagesPage />} />
+        <Route path="/tours/:tourRoute" element={<TourDetailPage />} />
         <Route path="/destinations" element={<DestinationsPage />} />
         <Route path="/activities" element={<ActivitiesPage />} />
         <Route path="/contact" element={<ContactPage />} />
