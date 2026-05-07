@@ -2,31 +2,32 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <footer className="footer">
-      {/* ── CTA band ── */}
-      <div className="container">
-        <div className="footer-cta">
-          <div className="footer-cta-left">
-            <span className="footer-cta-icon">
-              <img src="/icon1.png" alt="Safari jeep icon" loading="lazy" />
-            </span>
-            <div>
-              <h3>Let Us Create Your Tailor-Made Trip</h3>
-              <p>Tailor Your Perfect Ugandan Adventure With Expert Planning.</p>
+    <>
+      {/* ── CTA band (overlapping) ── */}
+      <div className="footer-cta-wrapper">
+        <div className="container">
+          <div className="footer-cta">
+            <div className="footer-cta-left">
+              <span className="footer-cta-icon">
+                <img src="/icon1.png" alt="Safari jeep icon" loading="lazy" />
+              </span>
+              <div>
+                <h3>Let Us Create Your Tailor-Made Trip</h3>
+                <p>Tailor Your Perfect Ugandan Adventure With Expert Planning.</p>
+              </div>
             </div>
+            <span className="footer-cta-plane" aria-hidden="true">
+              <svg viewBox="0 0 120 60" fill="none" width="110" height="55">
+                <path d="M10 50 Q60 -10 110 30" stroke="white" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.3"/>
+                <path d="M21 3L3 10.5l6.75 2.75L12 21l2.75-6.75L21 3z" fill="white" opacity="0.18" transform="translate(96 20) rotate(-20)"/>
+              </svg>
+            </span>
+            <Link className="btn btn-outline-white" to="/contact">LET&apos;S GET STARTED</Link>
           </div>
-          <span className="footer-cta-plane" aria-hidden="true">
-            <svg viewBox="0 0 120 60" fill="none" width="110" height="55">
-              <path d="M10 50 Q60 -10 110 30" stroke="white" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.3"/>
-              <path d="M21 3L3 10.5l6.75 2.75L12 21l2.75-6.75L21 3z" fill="white" opacity="0.18" transform="translate(96 20) rotate(-20)"/>
-            </svg>
-          </span>
-          <Link className="btn btn-outline-white" to="/contact">LET&apos;S GET STARTED</Link>
         </div>
       </div>
 
-      {/* ── Main grid ── */}
-      <div className="footer-body">
+      <footer className="footer">
         <div className="container">
           <div className="footer-grid">
             {/* Brand col */}
@@ -117,8 +118,8 @@ function Footer() {
             <p>Designed by <a href="#">Kavo Technologies</a></p>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   )
 }
 
