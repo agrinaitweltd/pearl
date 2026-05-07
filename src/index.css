@@ -101,18 +101,20 @@ button { cursor: pointer; font-family: inherit; }
   z-index: 10;
   padding-bottom: 0;
 }
-/* torn-paper white edge along the bottom — peaks pointing down */
+/* grass-edge image — flipped so silhouette hangs downward into navbar */
 .topbar::after {
   content: '';
   display: block;
   position: absolute;
-  bottom: -22px;
+  bottom: -38px;
   left: 0;
   width: 100%;
-  height: 26px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 26' preserveAspectRatio='none'%3E%3Cpath d='M0 0 L0 10 L18 22 L32 12 L50 20 L60 8 L74 18 L88 6 L100 16 L116 4 L128 17 L142 7 L158 19 L170 9 L186 21 L198 11 L212 18 L226 6 L240 15 L252 4 L268 17 L280 8 L296 20 L310 10 L324 19 L338 7 L352 16 L364 5 L380 18 L392 9 L406 21 L420 11 L436 17 L448 6 L462 15 L476 4 L490 19 L504 8 L518 20 L532 9 L546 17 L560 5 L572 14 L586 3 L600 18 L614 7 L626 19 L640 10 L656 20 L668 8 L682 16 L696 5 L710 18 L724 6 L736 15 L750 4 L764 17 L778 7 L792 19 L806 9 L820 21 L834 10 L848 18 L860 6 L874 15 L888 3 L900 16 L914 7 L928 19 L942 8 L956 17 L968 5 L982 14 L996 4 L1010 18 L1024 9 L1038 20 L1050 11 L1064 19 L1078 7 L1092 15 L1106 4 L1118 17 L1132 8 L1148 20 L1160 9 L1174 18 L1188 6 L1200 16 L1216 4 L1228 17 L1242 7 L1256 19 L1270 10 L1284 21 L1298 9 L1312 17 L1324 5 L1338 14 L1352 3 L1366 16 L1380 7 L1394 19 L1408 8 L1422 18 L1440 6 L1440 0 Z' fill='white'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  height: 42px;
+  background-image: url('/grass-edge.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center top;
+  transform: scaleY(-1);
   pointer-events: none;
 }
 .topbar-inner {
