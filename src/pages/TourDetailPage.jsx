@@ -17,12 +17,36 @@ const EMPTY = {
 }
 
 const TABS = [
-  { id: 'overview', label: 'Overview' },
-  { id: 'itinerary', label: 'Itinerary' },
-  { id: 'gallery', label: 'Gallery' },
-  { id: 'activities', label: 'Activities' },
-  { id: 'prices', label: 'Prices' },
-  { id: 'book-now', label: 'Book Now' },
+  { 
+    id: 'overview', 
+    label: 'Overview',
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+  },
+  { 
+    id: 'itinerary', 
+    label: 'Itinerary',
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M4 4h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2 3a1 1 0 100 2 1 1 0 000-2zm0 4a1 1 0 100 2 1 1 0 000-2zm4-4h4v1h-4V7zm0 4h4v1h-4v-1z"/></svg>
+  },
+  { 
+    id: 'gallery', 
+    label: 'Gallery',
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V4zm4 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-2 9l3-3 2 2 4-4 3 3v2H5v-2z"/></svg>
+  },
+  { 
+    id: 'activities', 
+    label: 'Activities',
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a2 2 0 100 4 2 2 0 000-4zM6 7.5a1 1 0 011-1h6a1 1 0 011 1V9l2.5 7a1 1 0 01-1.9.6L13 12v6h-2v-6h-2v6H7v-6l-1.6 4.6a1 1 0 01-1.9-.6L6 9V7.5z"/></svg>
+  },
+  { 
+    id: 'prices', 
+    label: 'Prices',
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm3 3h6v1H7V7zm0 3h6v1H7v-1zm0 3h4v1H7v-1z"/></svg>
+  },
+  { 
+    id: 'book-now', 
+    label: 'Book Now',
+    icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M3 3a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 13.846 4.632 16 6.414 16H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 5H6.28l-.31-1.243A1 1 0 005 3H3zm13 15.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+  },
 ]
 
 const INCLUDED_ITEMS = [
@@ -180,6 +204,7 @@ export default function TourDetailPage() {
               className={activeTab === tab.id ? 'tour-subnav-link is-active' : 'tour-subnav-link'}
               onClick={() => setActiveTab(tab.id)}
             >
+              {tab.icon}
               {tab.label}
             </button>
           ))}
