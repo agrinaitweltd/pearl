@@ -2,7 +2,7 @@ export const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
   { label: 'Tour Packages', path: '/tour-packages' },
-  { label: 'Destinations', path: '/destinations' },
+  { label: 'Discover Uganda', path: '/destinations' },
   { label: 'Contact Us', path: '/contact' },
 ]
 
@@ -122,21 +122,39 @@ export const reasonCards = [
 export const destinations = [
   {
     name: 'Bwindi Impenetrable National Park',
-    image:
-      'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=900&q=80',
-    text: 'Premier gorilla trekking destination with misty rainforest trails.',
+    slug: 'Bwindi',
+    image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=900&q=80',
+    text: 'Premier gorilla trekking destination with misty rainforest trails and rare mountain gorilla families.',
   },
   {
     name: 'Queen Elizabeth National Park',
-    image:
-      'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=80',
-    text: 'Famous for tree-climbing lions and diverse wildlife habitats.',
+    slug: 'Queen Elizabeth',
+    image: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=80',
+    text: 'Famous for tree-climbing lions, Kazinga Channel boat cruises, and diverse savannah wildlife.',
   },
   {
     name: 'Murchison Falls National Park',
-    image:
-      'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=80',
-    text: 'Powerful falls, river cruises, and dramatic savannah scenery.',
+    slug: 'Murchison Falls',
+    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=80',
+    text: 'Home to the world\'s most powerful waterfall, dramatic Nile scenery and rich savannah game drives.',
+  },
+  {
+    name: 'Kibale Forest National Park',
+    slug: 'Kibale',
+    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=900&q=80',
+    text: 'The primate capital of the world — home to 13 primate species including chimpanzees and red colobus.',
+  },
+  {
+    name: 'Kidepo Valley National Park',
+    slug: 'Kidepo',
+    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80',
+    text: 'Uganda\'s most remote park — untouched savannah, huge herds, and some of Africa\'s finest landscapes.',
+  },
+  {
+    name: 'Lake Mburo National Park',
+    slug: 'Lake Mburo',
+    image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=900&q=80',
+    text: 'A relaxed park famous for zebras, hippos, impalas and rewarding horseback or walking safaris.',
   },
 ]
 
