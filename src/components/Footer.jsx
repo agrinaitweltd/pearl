@@ -33,10 +33,6 @@ function Footer() {
             <div className="footer-brand">
               <div className="footer-brand-logo">
                 <img src="/logo.png" alt="Pearl Land Safaris" className="footer-logo-img" loading="lazy" />
-                <div>
-                  <strong>Pearl Land Safaris</strong>
-                  <small>UGANDA TOURS &amp; SAFARIS</small>
-                </div>
               </div>
               <p>Explore the nature and wildlife of Uganda with us and experience unforgettable safaris.</p>
               <div className="footer-social">
@@ -123,7 +119,7 @@ function Footer() {
               <a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a>
             </p>
             <p>Copyright © 2026 <a href="/">Pearl Land Safaris</a>. All Rights Reserved.</p>
-            <p>Designed by <a href="#">Pebble Softwares</a></p>
+            <p>Designed by <a href="#">Kavo Technologies</a></p>
           </div>
         </div>
       </div>

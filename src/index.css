@@ -1278,10 +1278,9 @@ button { cursor: pointer; font-family: inherit; }
   gap: 10px;
 }
 .footer-logo-img {
-  width: 48px;
-  height: 48px;
+  width: 160px;
+  height: auto;
   object-fit: contain;
-  border-radius: 6px;
   flex-shrink: 0;
 }
 .footer-brand p { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.7; }
@@ -2507,12 +2506,13 @@ button { cursor: pointer; font-family: inherit; }
     flex-direction: column;
     width: min(76vw, 320px);
     height: 100%;
-    background: #070909;
-    color: #fff;
+    background: #ffffff;
+    color: var(--text);
     padding: 26px 28px 32px;
     transform: translateX(-100%);
     transition: transform 0.34s ease;
-    box-shadow: 18px 0 36px rgba(0,0,0,0.3);
+    box-shadow: 18px 0 36px rgba(0,0,0,0.16);
+    border-right: 4px solid var(--green);
   }
   .mobile-menu.is-open .mobile-menu-panel {
     transform: translateX(0);
@@ -2529,7 +2529,6 @@ button { cursor: pointer; font-family: inherit; }
     height: auto;
     max-height: 54px;
     object-fit: contain;
-    filter: brightness(0.94);
   }
   .mobile-menu-close {
     position: fixed;
@@ -2540,7 +2539,7 @@ button { cursor: pointer; font-family: inherit; }
     max-width: 112px;
     height: 102px;
     border: 0;
-    background: #8d8d8d;
+    background: var(--green);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2561,13 +2560,16 @@ button { cursor: pointer; font-family: inherit; }
     padding-top: 18px;
   }
   .mobile-menu-nav a {
-    color: #fff;
+    color: var(--green-deep);
     font-size: 1.1rem;
     font-weight: 700;
     line-height: 1.25;
   }
+  .mobile-menu-nav a:hover {
+    color: var(--green);
+  }
   .mobile-menu-nav a.active-link {
-    color: var(--gold);
+    color: var(--green);
   }
   .hero-content { padding: 108px 0 72px; }
   .hero-content h1 { font-size: 2.45rem; gap: 8px; flex-wrap: wrap; }
