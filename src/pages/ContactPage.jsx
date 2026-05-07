@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const ENQUIRY_TYPES = [
-  { key: 'safari',  label: '🦁 Safari Booking',    desc: 'Plan a tailor-made trip' },
-  { key: 'group',   label: '👥 Group Enquiry',      desc: 'Groups of 6 or more' },
-  { key: 'info',    label: '📋 Tour Information',   desc: 'Ask about a package' },
-  { key: 'general', label: '✉️ General Enquiry',    desc: 'Anything else' },
+  { key: 'safari',  label: 'Safari Booking',   desc: 'Plan a tailor-made trip' },
+  { key: 'group',   label: 'Group Enquiry',     desc: 'Groups of 6 or more' },
+  { key: 'info',    label: 'Tour Information',  desc: 'Ask about a package' },
+  { key: 'general', label: 'General Enquiry',   desc: 'Anything else' },
 ]
 
 const EMPTY = { name:'', email:'', phone:'', country:'', adults:'', children:'',
