@@ -7,12 +7,7 @@ export default function ActivitiesPage() {
       {/* ── Hero ───────────────────────────────────────────── */}
       <section className="act-page-hero">
         <div className="act-page-hero-overlay" />
-        <svg className="act-hero-arc" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M140 20 Q20 20 20 140" stroke="white" strokeWidth="1.4" strokeDasharray="5 5" fill="none" />
-          <g transform="translate(138,14) rotate(-45)">
-            <path d="M0-6 L4 6 L0 3 L-4 6 Z" fill="white" />
-          </g>
-        </svg>
+        <img className="act-hero-arc" src="/icon2.png" alt="" aria-hidden="true" />
         <div className="act-page-hero-content">
           <h1>Activities</h1>
           <nav className="subpage-breadcrumb">

@@ -328,22 +328,27 @@ button { cursor: pointer; font-family: inherit; }
   right: 40px;
   z-index: 5;
   display: flex;
+  height: auto;
   gap: 10px;
 }
+  opacity: 0.72;
 .hero-arrow {
   width: 46px; height: 46px;
   border-radius: 50%;
   background: rgba(255,255,255,0.15);
   border: 1.5px solid rgba(255,255,255,0.4);
-  color: #fff;
+  width: 170px;
+  height: auto;
   display: flex;
   align-items: center;
+  opacity: 0.72;
   justify-content: center;
   transition: background 0.2s;
 }
 .hero-arrow:hover { background: rgba(255,255,255,0.30); }
 
 .hero-content {
+  height: auto;
   position: relative;
   z-index: 4;
   padding: 110px 0 72px;
@@ -353,6 +358,7 @@ button { cursor: pointer; font-family: inherit; }
 .hero-content .script {
   font-size: 2rem;
   color: var(--gold);
+  height: auto;
   margin-bottom: 4px;
   display: block;
 }
@@ -361,7 +367,7 @@ button { cursor: pointer; font-family: inherit; }
   font-weight: 900;
   font-size: clamp(3.4rem, 5.5vw, 6rem);
   line-height: 1;
-  margin-bottom: 28px;
+  height: auto;
   display: flex;
   align-items: baseline;
   gap: 16px;
@@ -370,30 +376,77 @@ button { cursor: pointer; font-family: inherit; }
 /* Typed animated gold word */
 .h1-typed {
   font-family: var(--font-script);
+  height: auto;
   font-weight: 700;
   color: var(--gold);
+  opacity: 0.72;
   font-size: clamp(3.6rem, 6vw, 6.5rem);
   line-height: 1;
+  .topbar-contact { gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
+  .topbar-contact a { font-size: 0.8rem; }
+  .hero { min-height: 580px; }
+  .hero-plane { width: 250px; top: 72px; }
+  .subpage-breadcrumb,
+  .about-breadcrumb { flex-wrap: wrap; justify-content: center; }
+  .footer-cta-plane { right: 36px; }
   min-width: 2ch;
   display: inline-block;
 }
 /* Cursor blink */
 .h1-cursor {
-  display: inline-block;
+  .topbar { font-size: 0.8rem; }
+  .topbar-inner { height: auto; padding: 10px 0 14px; flex-wrap: wrap; justify-content: center; }
+  .topbar-social { width: 100%; justify-content: center; }
+  .topbar-contact { width: 100%; justify-content: center; gap: 0.7rem 1.2rem; }
+  .topbar-contact a { font-size: 0.78rem; }
   width: 3px;
-  height: 0.75em;
+  .navbar-inner { height: auto; padding: 14px 0; gap: 0.8rem; }
+  .brand-logo-img { width: 54px; height: 54px; }
+  .menu-btn { width: 44px; height: 42px; }
+  .hero { min-height: 540px; }
+  .hero-plane { width: 176px; top: 54px; }
   background: var(--white);
-  margin-left: 2px;
-  vertical-align: middle;
+  .hero-content { padding: 108px 0 72px; }
+  .hero-content h1 { font-size: 2.45rem; gap: 8px; flex-wrap: wrap; }
+  .h1-typed { font-size: clamp(2.8rem, 10vw, 4rem); }
+  .hero-points li { justify-content: center; text-align: center; }
   animation: blink 1s step-end infinite;
-}
+  .hero-arrows { bottom: 96px; right: 16px; }
+  .hero-arrow { width: 42px; height: 42px; }
+  .search-bar-wrap { margin-top: -36px; }
+  .sb-field { padding: 18px 20px; min-height: 82px; border-right: none; border-bottom: 1px solid var(--border); }
+  .sb-btn-wrap { padding: 14px; }
 @keyframes blink { 50% { opacity: 0; } }
 
 .hero-points {
+  .about-page-hero,
+  .tours-page-hero,
+  .contact-page-hero,
+  .act-page-hero,
+  .dest-page-hero { min-height: 300px; padding: 56px 0 28px; }
+  .about-hero-plane-arc,
+  .tours-hero-arc,
+  .contact-hero-arc,
+  .act-hero-arc,
+  .dest-hero-arc { width: 110px; top: 16px; left: 14px; }
+  .about-page-hero-content,
+  .tours-page-hero-content,
+  .contact-page-hero-content,
+  .act-page-hero-content,
+  .dest-page-hero-content { gap: 10px; padding: 0 14px; }
+  .about-page-hero-content h1,
+  .tours-page-hero-content h1,
+  .contact-page-hero-content h1,
+  .act-page-hero-content h1,
+  .dest-page-hero-content h1 { font-size: clamp(2.2rem, 11vw, 3.4rem); }
+  .subpage-breadcrumb,
+  .about-breadcrumb { font-size: 0.82rem; gap: 6px; text-align: center; }
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
   justify-content: center;
+  .footer-cta-left { gap: 16px; align-items: flex-start; }
+  .footer-cta-plane { display: none; }
 }
 .hero-points li {
   display: flex;

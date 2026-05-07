@@ -21,12 +21,7 @@ export default function ContactPage() {
       {/* ── Hero ───────────────────────────────────────────── */}
       <section className="contact-page-hero">
         <div className="contact-page-hero-overlay" />
-        <svg className="contact-hero-arc" viewBox="0 0 160 160" fill="none">
-          <path d="M140 20 Q20 20 20 140" stroke="white" strokeWidth="1.4" strokeDasharray="5 5" fill="none"/>
-          <g transform="translate(138,14) rotate(-45)">
-            <path d="M0-6 L4 6 L0 3 L-4 6 Z" fill="white"/>
-          </g>
-        </svg>
+        <img className="contact-hero-arc" src="/icon2.png" alt="" aria-hidden="true" />
         <div className="contact-page-hero-content">
           <h1>Contact Us</h1>
           <nav className="subpage-breadcrumb">

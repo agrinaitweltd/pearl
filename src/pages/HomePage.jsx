@@ -75,25 +75,7 @@ export default function HomePage() {
         </div>
 
         {/* Airplane dashed-path decoration */}
-        <svg
-          className="hero-plane"
-          viewBox="0 0 260 130"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M10 120 Q80 20 220 30"
-            stroke="white"
-            strokeWidth="1.4"
-            strokeDasharray="7 5"
-            opacity="0.5"
-          />
-          <g transform="translate(218,18) rotate(-12)" opacity="0.9">
-            <path d="M0 0 L10 -4 L8 0 L10 4 Z" fill="white"/>
-            <path d="M3 -2 L7 -6 L8 -5 L5 -1 Z" fill="white" opacity="0.8"/>
-            <path d="M3 2 L7 6 L8 5 L5 1 Z" fill="white" opacity="0.8"/>
-          </g>
-        </svg>
+        <img className="hero-plane" src="/icon2.png" alt="" aria-hidden="true" />
 
         {/* Content */}
         <div className="container hero-content">

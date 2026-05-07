@@ -89,10 +89,7 @@ function TourPackagesPage() {
       {/* Hero */}
       <section className="tours-page-hero">
         <div className="tours-page-hero-overlay" />
-        <svg className="tours-hero-arc" viewBox="0 0 180 130" fill="none" aria-hidden="true">
-          <path d="M20 110 Q30 40 120 30" stroke="white" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.4"/>
-          <path d="M21 3L3 10.5l6.75 2.75L12 21l2.75-6.75L21 3z" fill="white" opacity="0.5" transform="translate(106 20) rotate(-30)"/>
-        </svg>
+        <img className="tours-hero-arc" src="/icon2.png" alt="" aria-hidden="true" />
         <div className="tours-page-hero-content">
           <h1>Safari Tours</h1>
           <nav className="about-breadcrumb" aria-label="Breadcrumb">
