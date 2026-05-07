@@ -348,6 +348,79 @@ button { cursor: pointer; font-family: inherit; }
   }
 }
 
+@keyframes mobile-header-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-logo-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes mobile-menu-button-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.9;
+  }
+}
+
+@keyframes mobile-hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-search-float {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 18px 50px rgba(10,30,20,0.12);
+  }
+  50% {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(10,30,20,0.18);
+  }
+}
+
+@keyframes mobile-nav-item-in {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobile-whatsapp-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 /* Slide nav arrows */
 .hero-arrows {
   position: absolute;
@@ -2389,7 +2462,17 @@ button { cursor: pointer; font-family: inherit; }
   .contact-hero-arc,
   .act-hero-arc,
   .dest-hero-arc,
-  .about-hero-plane-arc {
+  .about-hero-plane-arc,
+  .navbar-wrap,
+  .brand-logo-img,
+  .menu-btn,
+  .hero-content,
+  .hero-points li,
+  .search-bar,
+  .mobile-menu-panel,
+  .mobile-menu-logo,
+  .mobile-menu-nav li,
+  .whatsapp-float {
     animation: none;
   }
 }
@@ -2438,7 +2521,7 @@ button { cursor: pointer; font-family: inherit; }
 @media (max-width: 720px) {
   .topbar { display: none; }
   .navbar-shell {
-    min-height: 102px;
+    min-height: 84px;
     z-index: 120;
   }
   .navbar-wrap {
@@ -2448,32 +2531,35 @@ button { cursor: pointer; font-family: inherit; }
     right: 0;
     background: rgba(255,255,255,0.98);
     box-shadow: 0 8px 24px rgba(17, 31, 26, 0.08);
+    animation: mobile-header-fade 0.45s ease;
   }
   .navbar-shell.is-sticky .navbar-wrap {
     box-shadow: 0 10px 30px rgba(17, 31, 26, 0.12);
   }
   .navbar-inner {
-    height: 102px;
+    height: 84px;
     padding: 0;
     gap: 0.8rem;
   }
   .brand-logo-img {
-    width: 178px;
-    max-height: 54px;
+    width: 152px;
+    max-height: 46px;
+    animation: mobile-logo-bob 4.8s ease-in-out infinite;
   }
   .menu-btn {
-    width: 54px;
-    height: 54px;
+    width: 44px;
+    height: 44px;
     display: inline-flex;
     background: transparent;
     color: var(--text);
     border-radius: 0;
     padding: 0;
+    animation: mobile-menu-button-pulse 2.4s ease-in-out infinite;
   }
   .menu-btn:hover { background: transparent; }
   .menu-btn svg {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
     stroke: #0d2231;
     stroke-width: 1.9;
   }
@@ -2529,6 +2615,7 @@ button { cursor: pointer; font-family: inherit; }
     height: auto;
     max-height: 54px;
     object-fit: contain;
+    animation: mobile-logo-bob 4.8s ease-in-out infinite;
   }
   .mobile-menu-close {
     position: fixed;
@@ -2537,7 +2624,7 @@ button { cursor: pointer; font-family: inherit; }
     width: 24vw;
     min-width: 84px;
     max-width: 112px;
-    height: 102px;
+    height: 84px;
     border: 0;
     background: var(--green);
     display: inline-flex;
@@ -2559,6 +2646,16 @@ button { cursor: pointer; font-family: inherit; }
     gap: 26px;
     padding-top: 18px;
   }
+  .mobile-menu-nav li {
+    opacity: 0;
+    animation: mobile-nav-item-in 0.42s ease forwards;
+  }
+  .mobile-menu.is-open .mobile-menu-nav li:nth-child(1) { animation-delay: 0.08s; }
+  .mobile-menu.is-open .mobile-menu-nav li:nth-child(2) { animation-delay: 0.14s; }
+  .mobile-menu.is-open .mobile-menu-nav li:nth-child(3) { animation-delay: 0.2s; }
+  .mobile-menu.is-open .mobile-menu-nav li:nth-child(4) { animation-delay: 0.26s; }
+  .mobile-menu.is-open .mobile-menu-nav li:nth-child(5) { animation-delay: 0.32s; }
+  .mobile-menu.is-open .mobile-menu-nav li:nth-child(6) { animation-delay: 0.38s; }
   .mobile-menu-nav a {
     color: var(--green-deep);
     font-size: 1.1rem;
@@ -2571,14 +2668,27 @@ button { cursor: pointer; font-family: inherit; }
   .mobile-menu-nav a.active-link {
     color: var(--green);
   }
-  .hero-content { padding: 108px 0 72px; }
+  .hero-content {
+    padding: 96px 0 72px;
+    animation: mobile-hero-rise 0.6s ease both;
+  }
   .hero-content h1 { font-size: 2.45rem; gap: 8px; flex-wrap: wrap; }
   .h1-typed { font-size: clamp(2.8rem, 10vw, 4rem); }
-  .hero-points li { justify-content: center; text-align: center; }
+  .hero-points li {
+    justify-content: center;
+    text-align: center;
+    animation: mobile-hero-rise 0.6s ease both;
+  }
+  .hero-points li:nth-child(1) { animation-delay: 0.16s; }
+  .hero-points li:nth-child(2) { animation-delay: 0.24s; }
+  .hero-points li:nth-child(3) { animation-delay: 0.32s; }
   .hero-points { gap: 12px; flex-direction: column; }
   .hero-arrows { bottom: 96px; right: 16px; }
   .hero-arrow { width: 42px; height: 42px; }
   .search-bar-wrap { margin-top: -36px; }
+  .search-bar {
+    animation: mobile-search-float 4.6s ease-in-out infinite;
+  }
   .sb-field { padding: 18px 20px; min-height: 82px; border-right: none; border-bottom: 1px solid var(--border); }
   .sb-btn-wrap { padding: 14px; }
   .search-bar { grid-template-columns: 1fr; }
@@ -2633,5 +2743,6 @@ button { cursor: pointer; font-family: inherit; }
     bottom: 14px;
     width: 56px;
     height: 56px;
+    animation: mobile-whatsapp-float 2.6s ease-in-out infinite;
   }
 }
