@@ -1538,6 +1538,7 @@ button { cursor: pointer; font-family: inherit; }
   background-position: center 40%;
   text-align: center;
   color: var(--white);
+  animation: fade-in 0.8s ease-out;
 }
 .tours-page-hero-overlay {
   position: absolute;
@@ -1748,6 +1749,7 @@ button { cursor: pointer; font-family: inherit; }
   text-align: center;
   color: var(--white);
   overflow: hidden;
+  animation: fade-in 0.8s ease-out;
 }
 .contact-page-hero-overlay {
   position: absolute;
@@ -1807,7 +1809,11 @@ button { cursor: pointer; font-family: inherit; }
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  animation: scale-in 0.6s ease-out both;
 }
+.contact-info-card:nth-child(1) { animation-delay: 0.15s; }
+.contact-info-card:nth-child(2) { animation-delay: 0.3s; }
+.contact-info-card:nth-child(3) { animation-delay: 0.45s; }
 .contact-info-icon {
   width: 68px;
   height: 68px;
@@ -1864,6 +1870,7 @@ button { cursor: pointer; font-family: inherit; }
   border-radius: 14px;
   border: 1px solid var(--border);
   padding: 36px 32px 40px;
+  animation: fade-in-up 0.7s ease-out 0.3s both;
 }
 .contact-form-intro {
   font-size: 0.88rem;
@@ -1976,6 +1983,7 @@ button { cursor: pointer; font-family: inherit; }
   text-align: center;
   color: var(--white);
   overflow: hidden;
+  animation: fade-in 0.8s ease-out;
 }
 .act-page-hero-overlay {
   position: absolute;
@@ -2020,6 +2028,7 @@ button { cursor: pointer; font-family: inherit; }
 .act-intro-section {
   background: var(--bg-page);
   padding: 68px 0 48px;
+  animation: fade-in 0.8s ease-out 0.2s both;
 }
 .act-intro-h2 {
   font-size: clamp(1.3rem, 2.5vw, 1.75rem);
@@ -2040,6 +2049,7 @@ button { cursor: pointer; font-family: inherit; }
 .act-grid-section {
   background: var(--bg-page);
   padding: 16px 0 72px;
+  animation: fade-in 0.8s ease-out 0.3s both;
 }
 .act-grid {
   display: grid;
@@ -2143,6 +2153,7 @@ button { cursor: pointer; font-family: inherit; }
   text-align: center;
   color: var(--white);
   overflow: hidden;
+  animation: fade-in 0.8s ease-out;
 }
 .dest-page-hero-overlay {
   position: absolute;
@@ -2201,6 +2212,7 @@ button { cursor: pointer; font-family: inherit; }
 .dest-intro-section {
   background: var(--white);
   padding: 72px 0 60px;
+  animation: fade-in 0.8s ease-out 0.2s both;
 }
 .dest-intro-inner {
   display: grid;
@@ -2234,6 +2246,7 @@ button { cursor: pointer; font-family: inherit; }
 .dest-parks-section {
   background: var(--bg-page);
   padding: 60px 0 72px;
+  animation: fade-in 0.8s ease-out 0.3s both;
 }
 .dest-parks-grid {
   display: grid;
@@ -2250,7 +2263,16 @@ button { cursor: pointer; font-family: inherit; }
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0,0,0,0.13);
   transition: transform 0.3s, box-shadow 0.3s;
+  animation: scale-in 0.6s ease-out both;
 }
+.dest-park-card:nth-child(1) { animation-delay: 0.1s; }
+.dest-park-card:nth-child(2) { animation-delay: 0.2s; }
+.dest-park-card:nth-child(3) { animation-delay: 0.3s; }
+.dest-park-card:nth-child(4) { animation-delay: 0.4s; }
+.dest-park-card:nth-child(5) { animation-delay: 0.5s; }
+.dest-park-card:nth-child(6) { animation-delay: 0.6s; }
+.dest-park-card:nth-child(7) { animation-delay: 0.7s; }
+.dest-park-card:nth-child(8) { animation-delay: 0.8s; }
 .dest-park-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 32px rgba(0,0,0,0.22);
