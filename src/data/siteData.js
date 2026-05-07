@@ -3,6 +3,7 @@ export const navLinks = [
   { label: 'About Us', path: '/about' },
   { label: 'Tour Packages', path: '/tour-packages' },
   { label: 'Discover Uganda', path: '/destinations' },
+  { label: 'Activities', path: '/activities' },
   { label: 'Contact Us', path: '/contact' },
 ]
 
@@ -111,6 +112,45 @@ export const allTours = [
 
 export const featuredTours = allTours.slice(0, 3)
 
+
+export const activities = [
+  {
+    name: 'Gorilla Trekking',
+    image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Game Drive',
+    image: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Chimpanzee Tracking',
+    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Nile Boat Cruise',
+    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Bird Watching',
+    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Cultural Village Tour',
+    image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Hiking & Nature Walks',
+    image: 'https://images.unsplash.com/photo-1552083375-1447ce886485?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Night Game Drive',
+    image: 'https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Walking Safari',
+    image: 'https://images.unsplash.com/photo-1504173010664-32509107de16?auto=format&fit=crop&w=800&q=80',
+  },
+]
 
 export const reasonCards = [
   { title: 'Luxury & Budget-Friendly Safaris', text: 'Tailored options for premium escapes and value-driven itineraries.' },
