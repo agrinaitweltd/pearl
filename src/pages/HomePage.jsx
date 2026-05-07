@@ -11,10 +11,31 @@ const HERO_SLIDES = [
 const TYPING_WORDS = ['Treks', 'Adventures', 'Journeys', 'Expeditions', 'Escapes']
 
 const WHY_ICONS = [
-  'https://img.icons8.com/ios/100/c9a96e/trekking.png',
-  'https://img.icons8.com/ios/100/c9a96e/love-bird.png',
-  'https://img.icons8.com/ios/100/c9a96e/waypoint-map.png',
-  'https://img.icons8.com/ios/100/c9a96e/leaf.png',
+  <svg viewBox="0 0 48 48" fill="none" stroke="#c9a96e" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="52" height="52" key="trek">
+    <path d="M12 40V24M24 40V16M36 40V30"/>
+    <path d="M12 24c0-4 4-8 8-8s8 4 8 8"/>
+    <path d="M24 16c0-4 4-8 8-8s8 4 8 8"/>
+    <circle cx="12" cy="10" r="2.5" fill="#c9a96e"/>
+  </svg>,
+  <svg viewBox="0 0 48 48" fill="none" stroke="#c9a96e" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="52" height="52" key="bird">
+    <path d="M8 16c0-8 8-12 16-12s16 4 16 12c0 4-2 8-4 10"/>
+    <ellipse cx="24" cy="26" rx="10" ry="14"/>
+    <path d="M14 28c-4 2-6 6-4 10"/>
+    <path d="M34 28c4 2 6 6 4 10"/>
+    <circle cx="20" cy="22" r="1.5" fill="#c9a96e"/>
+    <circle cx="28" cy="22" r="1.5" fill="#c9a96e"/>
+    <path d="M22 28c0 2 1 3 2 3s2-1 2-3"/>
+  </svg>,
+  <svg viewBox="0 0 48 48" fill="none" stroke="#c9a96e" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="52" height="52" key="map">
+    <circle cx="24" cy="20" r="6"/>
+    <path d="M24 8a12 12 0 0112 12c0 8-12 20-12 20S12 28 12 20a12 12 0 0112-12z"/>
+    <path d="M8 34h32M10 40h28"/>
+  </svg>,
+  <svg viewBox="0 0 48 48" fill="none" stroke="#c9a96e" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="52" height="52" key="leaf">
+    <path d="M12 36c0-12 8-24 24-24 0 16-12 24-24 24z"/>
+    <path d="M12 12c16 0 24 12 24 24-12 0-24-8-24-24z"/>
+    <path d="M24 24l8 8"/>
+  </svg>,
 ]
 
 /* Typing animation hook */
@@ -228,7 +249,12 @@ export default function HomePage() {
             <div className="about-features">
               <div className="about-feat">
                 <div className="about-feat-icon">
-                  <img src="https://img.icons8.com/ios/80/1b6b3a/trekking.png" alt="" width="40" height="40" loading="lazy"/>
+                  <svg viewBox="0 0 48 48" fill="none" stroke="#1b6b3a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="40" height="40" aria-hidden="true">
+                    <path d="M12 38V22M24 38V14M36 38V28"/>
+                    <path d="M12 22c0-4 4-8 8-8s8 4 8 8"/>
+                    <path d="M24 14c0-4 4-8 8-8s8 4 8 8"/>
+                    <circle cx="12" cy="8" r="2" fill="#1b6b3a"/>
+                  </svg>
                   <span className="about-feat-dot" aria-hidden="true"/>
                 </div>
                 <h3>Low Price &amp; Friendly</h3>
@@ -236,7 +262,12 @@ export default function HomePage() {
               </div>
               <div className="about-feat">
                 <div className="about-feat-icon">
-                  <img src="https://img.icons8.com/ios/80/1b6b3a/tour-guide.png" alt="" width="40" height="40" loading="lazy"/>
+                  <svg viewBox="0 0 48 48" fill="none" stroke="#1b6b3a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="40" height="40" aria-hidden="true">
+                    <circle cx="24" cy="10" r="6"/>
+                    <path d="M24 18v8m-8 4l4-4m8 4l-4-4"/>
+                    <path d="M12 30c0-6 5-10 12-10s12 4 12 10"/>
+                    <path d="M20 40h8"/>
+                  </svg>
                   <span className="about-feat-dot" aria-hidden="true"/>
                 </div>
                 <h3>Trusted Travel Guide</h3>
@@ -270,7 +301,7 @@ export default function HomePage() {
               {reasonCards.map((card, i) => (
                 <div className="why-card" key={card.title}>
                   <div className="why-card-icon">
-                    <img src={WHY_ICONS[i]} alt={card.title} loading="lazy" />
+                    {WHY_ICONS[i]}
                   </div>
                   <h3>{card.title}</h3>
                 </div>

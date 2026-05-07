@@ -422,6 +422,61 @@ button { cursor: pointer; font-family: inherit; }
   }
 }
 
+@keyframes mobile-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobile-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobile-cta-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* ── Entrance animations ── */
 @keyframes fade-in-up {
   from {
@@ -3984,10 +4039,75 @@ button { cursor: pointer; font-family: inherit; }
   .why-cards,
   .tours-grid,
   .about-unique-grid { grid-template-columns: 1fr; }
-  .packages-header { flex-direction: column; }
-  .footer-cta-wrapper { margin-bottom: -70px; }
-  .footer-cta { margin: 0 16px; padding: 28px 24px; flex-direction: column; align-items: flex-start; }
-  .footer-cta-left { gap: 16px; align-items: flex-start; }
+  
+  /* Add mobile animations to cards */
+  .tour-card,
+  .dest-card,
+  .act-card,
+  .why-card,
+  .blog-card,
+  .review-card {
+    animation: mobile-fade-in 0.6s ease-out both;
+  }
+  .tour-card:nth-child(1),
+  .dest-card:nth-child(1),
+  .act-card:nth-child(1),
+  .why-card:nth-child(1) { animation-delay: 0.1s; }
+  .tour-card:nth-child(2),
+  .dest-card:nth-child(2),
+  .act-card:nth-child(2),
+  .why-card:nth-child(2) { animation-delay: 0.2s; }
+  .tour-card:nth-child(3),
+  .dest-card:nth-child(3),
+  .act-card:nth-child(3),
+  .why-card:nth-child(3) { animation-delay: 0.3s; }
+  .tour-card:nth-child(4),
+  .dest-card:nth-child(4),
+  .act-card:nth-child(4) { animation-delay: 0.4s; }
+  .tour-card:nth-child(5),
+  .dest-card:nth-child(5) { animation-delay: 0.5s; }
+  .tour-card:nth-child(6) { animation-delay: 0.6s; }
+  
+  .about-section,
+  .why-section,
+  .featured-tours,
+  .testimonials-section {
+    animation: mobile-fade-in 0.7s ease-out both;
+  }
+  
+  .packages-header { 
+    flex-direction: column;
+    animation: mobile-slide-in-left 0.6s ease-out both;
+  }
+  .footer-cta-wrapper { 
+    margin-bottom: -70px;
+    animation: mobile-cta-slide-up 0.8s ease-out both;
+  }
+  .footer-cta { 
+    margin: 0 16px; 
+    padding: 32px 24px 36px; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+  .footer-cta-left { 
+    gap: 20px; 
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer-cta-icon {
+    width: 80px;
+  }
+  .footer-cta h3 {
+    font-size: 1.65rem;
+  }
+  .footer-cta .btn {
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 1rem;
+    justify-content: center;
+  }
   .footer-cta-plane { display: none; }
   .footer-body { padding: 14px 0 48px; }
   .footer-grid { grid-template-columns: 1fr; }
