@@ -165,12 +165,24 @@ button { cursor: pointer; font-family: inherit; }
 .tc-icon svg { width: 14px; height: 14px; fill: white; }
 
 /* ─── Navbar ─────────────────────────────────────────────────── */
-.navbar-wrap {
-  position: sticky;
-  top: 0;
+.navbar-shell {
+  position: relative;
+  min-height: 86px;
   z-index: 99;
+}
+.navbar-wrap {
+  position: relative;
   background: var(--white);
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.navbar-shell.is-sticky .navbar-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 .navbar-inner {
   display: flex;
@@ -2329,6 +2341,7 @@ button { cursor: pointer; font-family: inherit; }
 
 @media (max-width: 720px) {
   .topbar-inner { height: auto; padding: 10px 0; flex-wrap: wrap; }
+  .navbar-shell { min-height: 78px; }
   .navbar-inner { height: auto; padding: 16px 0; }
   .main-nav { display: none; }
   .hero-content { padding-top: 80px; }
