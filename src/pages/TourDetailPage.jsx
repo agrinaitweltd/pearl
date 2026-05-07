@@ -174,17 +174,18 @@ export default function TourDetailPage() {
       <div className="container">
         <div className="tour-subnav" aria-label="Tour sections">
           {TABS.map((tab) => (
-            <a
+            <button
               key={tab.id}
-              href={`#${tab.id}`}
+              type="button"
               className={activeTab === tab.id ? 'tour-subnav-link is-active' : 'tour-subnav-link'}
               onClick={() => setActiveTab(tab.id)}
             >
               {tab.label}
-            </a>
+            </button>
           ))}
         </div>
 
+        {activeTab === 'overview' && (
         <section id="overview" className="tour-panel">
           <div className="tour-headline-row">
             <div>
@@ -242,7 +243,9 @@ export default function TourDetailPage() {
             </aside>
           </div>
         </section>
+        )}
 
+        {activeTab === 'itinerary' && (
         <section id="itinerary" className="tour-panel">
           <div className="tour-section-intro">
             <h2>Itinerary</h2>
@@ -269,7 +272,9 @@ export default function TourDetailPage() {
             ))}
           </div>
         </section>
+        )}
 
+        {activeTab === 'gallery' && (
         <section id="gallery" className="tour-panel">
           <div className="tour-section-intro">
             <h2>Gallery</h2>
@@ -285,7 +290,9 @@ export default function TourDetailPage() {
             ))}
           </div>
         </section>
+        )}
 
+        {activeTab === 'activities' && (
         <section id="activities" className="tour-panel">
           <div className="tour-section-intro">
             <h2>Activities</h2>
@@ -301,7 +308,9 @@ export default function TourDetailPage() {
             ))}
           </div>
         </section>
+        )}
 
+        {activeTab === 'prices' && (
         <section id="prices" className="tour-panel">
           <div className="tour-prices-grid">
             <div>
@@ -379,7 +388,9 @@ export default function TourDetailPage() {
             </aside>
           </div>
         </section>
+        )}
 
+        {activeTab === 'book-now' && (
         <section id="book-now" className="tour-panel tour-book-now-panel">
           <div className="tour-book-layout">
             <div className="tour-book-copy">
@@ -501,6 +512,7 @@ export default function TourDetailPage() {
             </div>
           </div>
         </section>
+        )}
       </div>
     </section>
   )
