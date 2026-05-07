@@ -321,6 +321,25 @@ button { cursor: pointer; font-family: inherit; }
   z-index: 3;
   pointer-events: none;
   opacity: 0.72;
+  animation: hero-deco-float 6s ease-in-out infinite;
+}
+
+@keyframes hero-deco-float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px) rotate(1deg);
+  }
+}
+
+@keyframes hero-deco-drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate3d(10px, 8px, 0) rotate(1deg);
+  }
 }
 
 /* Slide nav arrows */
@@ -1358,6 +1377,7 @@ button { cursor: pointer; font-family: inherit; }
   width: 180px;
   z-index: 1;
   pointer-events: none;
+  animation: hero-deco-drift 6.5s ease-in-out infinite;
 }
 .tours-page-hero-content {
   position: relative;
@@ -1574,6 +1594,7 @@ button { cursor: pointer; font-family: inherit; }
   height: 150px;
   opacity: 0.75;
   z-index: 1;
+  animation: hero-deco-drift 6.5s ease-in-out infinite;
 }
 .contact-page-hero-content {
   position: relative;
@@ -1801,6 +1822,7 @@ button { cursor: pointer; font-family: inherit; }
   height: 150px;
   opacity: 0.75;
   z-index: 1;
+  animation: hero-deco-drift 6.5s ease-in-out infinite;
 }
 .act-page-hero-content {
   position: relative;
@@ -1958,6 +1980,7 @@ button { cursor: pointer; font-family: inherit; }
   height: 150px;
   opacity: 0.75;
   z-index: 1;
+  animation: hero-deco-drift 6.5s ease-in-out infinite;
 }
 .dest-page-hero-content {
   position: relative;
@@ -2134,6 +2157,7 @@ button { cursor: pointer; font-family: inherit; }
   width: 180px;
   z-index: 1;
   pointer-events: none;
+  animation: hero-deco-drift 6.5s ease-in-out infinite;
 }
 .about-breadcrumb {
   font-size: 0.9rem;
@@ -2353,6 +2377,17 @@ button { cursor: pointer; font-family: inherit; }
   transition: transform 0.2s;
 }
 .whatsapp-float:hover { transform: scale(1.1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-plane,
+  .tours-hero-arc,
+  .contact-hero-arc,
+  .act-hero-arc,
+  .dest-hero-arc,
+  .about-hero-plane-arc {
+    animation: none;
+  }
+}
 
 /* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 1100px) {
