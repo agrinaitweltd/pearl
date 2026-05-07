@@ -7,6 +7,8 @@ import DestinationsPage from './pages/DestinationsPage'
 import HomePage from './pages/HomePage'
 import TourPackagesPage from './pages/TourPackagesPage'
 import TourDetailPage from './pages/TourDetailPage'
+import FAQPage from './pages/FAQPage'
+import AccommodationsPage from './pages/AccommodationsPage'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/destinations" element={<DestinationsPage />} />
         <Route path="/activities" element={<ActivitiesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/accommodations" element={<AccommodationsPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
