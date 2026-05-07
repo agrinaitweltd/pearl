@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <>
-      {/* ── CTA band (overlapping) ── */}
+    <footer className="footer">
       <div className="footer-cta-wrapper">
         <div className="container">
           <div className="footer-cta">
@@ -27,7 +26,7 @@ function Footer() {
         </div>
       </div>
 
-      <footer className="footer">
+      <div className="footer-body">
         <div className="container">
           <div className="footer-grid">
             {/* Brand col */}
@@ -118,8 +117,8 @@ function Footer() {
             <p>Designed by <a href="#">Kavo Technologies</a></p>
           </div>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   )
 }
 
