@@ -2320,6 +2320,63 @@ button { cursor: pointer; font-family: inherit; }
   top: 100px;
   animation: fade-in 0.8s ease-out 0.4s both;
 }
+
+.tour-booking-summary {
+  background: linear-gradient(135deg, var(--green-deep), var(--green));
+  color: var(--white);
+  padding: 24px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(27, 107, 58, 0.2);
+}
+.tbs-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.tour-booking-summary h4 {
+  font-size: 20px;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.3;
+  font-family: 'Playfair Display', serif;
+}
+.tbs-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.tbs-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.95);
+}
+.tbs-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.tbs-price span {
+  font-size: 13px;
+  opacity: 0.85;
+}
+.tbs-price strong {
+  font-size: 28px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
 .tour-booking-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -2340,11 +2397,54 @@ button { cursor: pointer; font-family: inherit; }
   margin-bottom: 24px;
 }
 
+.form-success-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  border: 1px solid #b1dfbb;
+  color: #155724;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: fade-in 0.4s ease-out;
+}
+.form-success-banner svg {
+  flex-shrink: 0;
+}
+
 .tour-booking-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
 }
+
+.tbf-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-page);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.tbf-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--green);
+  margin: 0 0 8px 0;
+  font-family: 'Jost', sans-serif;
+}
+.tbf-section-title svg {
+  flex-shrink: 0;
+  stroke: var(--green);
+}
+
 .tbf-field {
   display: flex;
   flex-direction: column;
@@ -2412,6 +2512,27 @@ button { cursor: pointer; font-family: inherit; }
 }
 .btn-book-safari:hover svg {
   transform: translateX(4px);
+}
+
+.tour-booking-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px;
+  background: var(--bg-page);
+  border-radius: 10px;
+  margin-top: 4px;
+}
+.tour-booking-features .tbf-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+.tour-booking-features .tbf-item svg {
+  flex-shrink: 0;
 }
 
 .tour-booking-note {

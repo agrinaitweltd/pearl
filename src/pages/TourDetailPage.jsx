@@ -4,13 +4,14 @@ import { allTours } from '../data/siteData'
 
 const EMPTY = { 
   name:'', email:'', phone:'', country:'', adults:'2', children:'0',
-  arrival:'', departure:'', message:'' 
+  arrival:'', departure:'', budget:'', accommodation:'', message:'' 
 }
 
 export default function TourDetailPage() {
   const { tourRoute } = useParams()
   const navigate = useNavigate()
   const [form, setForm] = useState(EMPTY)
+  const [submitted, setSubmitted] = useState(false)
   
   const tour = allTours.find((t) => t.route === tourRoute)
   
@@ -23,6 +24,13 @@ export default function TourDetailPage() {
   if (!tour) return null
   
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
+    // Here you would normally send to backend/email service
+    setTimeout(() => setSubmitted(false), 5000)
+  }
 
   return (
     <>
@@ -108,120 +116,235 @@ export default function TourDetailPage() {
 
           {/* Right - Booking Form */}
           <div className="tour-detail-booking">
+            <div className="tour-booking-summary">
+              <div className="tbs-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" width="20" height="20">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+                </svg>
+                <span>Your Safari Selection</span>
+              </div>
+              <h4>{tour.title}</h4>
+              <div className="tbs-details">
+                <span className="tbs-item">
+                  <svg viewBox="0 0 24 24" fill="var(--gold)" width="14" height="14">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="var(--bg-dark)" strokeWidth="1.5"/>
+                  </svg>
+                  {tour.days} Days
+                </span>
+                <span className="tbs-item">
+                  <svg viewBox="0 0 24 24" fill="var(--gold)" width="14" height="14">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  {tour.route}
+                </span>
+                <span className="tbs-item">
+                  <svg viewBox="0 0 24 24" fill="var(--gold)" width="14" height="14">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  {tour.tier}
+                </span>
+              </div>
+              <div className="tbs-price">
+                <span>Starting from</span>
+                <strong>{tour.price}</strong>
+              </div>
+            </div>
+            
             <div className="tour-booking-card">
-              <h3>Book This Safari</h3>
+              <h3>Request a Quote</h3>
               <p className="tour-booking-intro">
-                Fill out the form below and we'll get back to you within 24 hours with a detailed quote and itinerary.
+                Share your details below and we'll create a personalized itinerary with pricing within 24 hours.
               </p>
               
-              <form className="tour-booking-form" onSubmit={(e) => e.preventDefault()}>
-                <div className="tbf-field">
-                  <label>Full Name *</label>
-                  <input 
-                    type="text" 
-                    placeholder="e.g. John Smith" 
-                    value={form.name} 
-                    onChange={set('name')} 
-                    required 
-                  />
+              {submitted && (
+                <div className="form-success-banner">
+                  <svg viewBox="0 0 24 24" fill="var(--green)" width="20" height="20">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span>Thank you! We'll be in touch within 24 hours.</span>
                 </div>
-
-                <div className="tbf-field">
-                  <label>Email Address *</label>
-                  <input 
-                    type="email" 
-                    placeholder="you@example.com" 
-                    value={form.email} 
-                    onChange={set('email')} 
-                    required 
-                  />
-                </div>
-
-                <div className="tbf-row">
+              )}
+              
+              <form className="tour-booking-form" onSubmit={handleSubmit}>
+                <div className="tbf-section">
+                  <h5 className="tbf-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+                    </svg>
+                    Contact Information
+                  </h5>
+                  
                   <div className="tbf-field">
-                    <label>Phone Number</label>
-                    <input 
-                      type="tel" 
-                      placeholder="+1 234 567 8900" 
-                      value={form.phone} 
-                      onChange={set('phone')} 
-                    />
-                  </div>
-                  <div className="tbf-field">
-                    <label>Country</label>
+                    <label>Full Name *</label>
                     <input 
                       type="text" 
-                      placeholder="Your country" 
-                      value={form.country} 
-                      onChange={set('country')} 
-                    />
-                  </div>
-                </div>
-
-                <div className="tbf-row">
-                  <div className="tbf-field">
-                    <label>Arrival Date</label>
-                    <input 
-                      type="date" 
-                      value={form.arrival} 
-                      onChange={set('arrival')} 
-                    />
-                  </div>
-                  <div className="tbf-field">
-                    <label>Departure Date</label>
-                    <input 
-                      type="date" 
-                      value={form.departure} 
-                      onChange={set('departure')} 
-                    />
-                  </div>
-                </div>
-
-                <div className="tbf-row">
-                  <div className="tbf-field">
-                    <label>Adults *</label>
-                    <input 
-                      type="number" 
-                      min="1" 
-                      value={form.adults} 
-                      onChange={set('adults')} 
+                      placeholder="e.g. John Smith" 
+                      value={form.name} 
+                      onChange={set('name')} 
                       required 
                     />
                   </div>
+
                   <div className="tbf-field">
-                    <label>Children</label>
+                    <label>Email Address *</label>
                     <input 
-                      type="number" 
-                      min="0" 
-                      value={form.children} 
-                      onChange={set('children')} 
+                      type="email" 
+                      placeholder="you@example.com" 
+                      value={form.email} 
+                      onChange={set('email')} 
+                      required 
                     />
+                  </div>
+
+                  <div className="tbf-row">
+                    <div className="tbf-field">
+                      <label>Phone Number</label>
+                      <input 
+                        type="tel" 
+                        placeholder="+1 234 567 8900" 
+                        value={form.phone} 
+                        onChange={set('phone')} 
+                      />
+                    </div>
+                    <div className="tbf-field">
+                      <label>Country</label>
+                      <input 
+                        type="text" 
+                        placeholder="Your country" 
+                        value={form.country} 
+                        onChange={set('country')} 
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div className="tbf-field">
-                  <label>Special Requests</label>
-                  <textarea
-                    rows="4"
-                    placeholder="Tell us about dietary requirements, accessibility needs, special occasions, or any other preferences..."
-                    value={form.message}
-                    onChange={set('message')}
-                  />
+                <div className="tbf-section">
+                  <h5 className="tbf-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                      <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+                    </svg>
+                    Travel Details
+                  </h5>
+                  
+                  <div className="tbf-row">
+                    <div className="tbf-field">
+                      <label>Arrival Date</label>
+                      <input 
+                        type="date" 
+                        value={form.arrival} 
+                        onChange={set('arrival')} 
+                      />
+                    </div>
+                    <div className="tbf-field">
+                      <label>Departure Date</label>
+                      <input 
+                        type="date" 
+                        value={form.departure} 
+                        onChange={set('departure')} 
+                      />
+                    </div>
+                  </div>
+
+                  <div className="tbf-row">
+                    <div className="tbf-field">
+                      <label>Adults *</label>
+                      <input 
+                        type="number" 
+                        min="1" 
+                        value={form.adults} 
+                        onChange={set('adults')} 
+                        required 
+                      />
+                    </div>
+                    <div className="tbf-field">
+                      <label>Children (under 12)</label>
+                      <input 
+                        type="number" 
+                        min="0" 
+                        value={form.children} 
+                        onChange={set('children')} 
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="tbf-section">
+                  <h5 className="tbf-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    Preferences
+                  </h5>
+                  
+                  <div className="tbf-field">
+                    <label>Budget per Person</label>
+                    <select value={form.budget} onChange={set('budget')}>
+                      <option value="">Select your budget range</option>
+                      <option value="economy">Economy ($500 - $1,000)</option>
+                      <option value="mid-range">Mid-Range ($1,000 - $2,500)</option>
+                      <option value="luxury">Luxury ($2,500 - $4,000)</option>
+                      <option value="ultra-luxury">Ultra-Luxury ($4,000+)</option>
+                    </select>
+                  </div>
+                  
+                  <div className="tbf-field">
+                    <label>Accommodation Preference</label>
+                    <select value={form.accommodation} onChange={set('accommodation')}>
+                      <option value="">Select accommodation type</option>
+                      <option value="standard">Standard Lodges</option>
+                      <option value="mid-range">Mid-Range Lodges</option>
+                      <option value="luxury">Luxury Safari Lodges</option>
+                      <option value="tented">Luxury Tented Camps</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="tbf-section">
+                  <h5 className="tbf-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                    </svg>
+                    Additional Information
+                  </h5>
+                  
+                  <div className="tbf-field">
+                    <label>Special Requests or Questions</label>
+                    <textarea
+                      rows="4"
+                      placeholder="Tell us about dietary requirements, accessibility needs, celebrations, wildlife interests, or any questions you have..."
+                      value={form.message}
+                      onChange={set('message')}
+                    />
+                  </div>
                 </div>
 
                 <button type="submit" className="btn-book-safari">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="18" height="18">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
-                  Request Booking
+                  Get Your Free Quote
                 </button>
 
-                <p className="tour-booking-note">
-                  <svg viewBox="0 0 24 24" fill="var(--green)" width="16" height="16">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-                  </svg>
-                  Free cancellation up to 7 days before departure
-                </p>
+                <div className="tour-booking-features">
+                  <span className="tbf-item">
+                    <svg viewBox="0 0 24 24" fill="var(--green)" width="16" height="16">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    Free cancellation
+                  </span>
+                  <span className="tbf-item">
+                    <svg viewBox="0 0 24 24" fill="var(--green)" width="16" height="16">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    24-hour response
+                  </span>
+                  <span className="tbf-item">
+                    <svg viewBox="0 0 24 24" fill="var(--green)" width="16" height="16">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    No payment required
+                  </span>
+                </div>
               </form>
             </div>
 
