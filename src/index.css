@@ -1165,7 +1165,18 @@ button { cursor: pointer; font-family: inherit; }
   transform: translateY(-46px);
 }
 .footer-cta-left { display: flex; align-items: center; gap: 24px; }
-.footer-cta-icon { font-size: 3.5rem; opacity: 0.85; flex-shrink: 0; }
+.footer-cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  flex-shrink: 0;
+}
+.footer-cta-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .footer-cta h3 {
   font-weight: 800;
   font-size: clamp(1.5rem, 2.2vw, 2.2rem);

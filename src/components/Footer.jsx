@@ -8,13 +8,7 @@ function Footer() {
         <div className="footer-cta">
           <div className="footer-cta-left">
             <span className="footer-cta-icon">
-              <svg viewBox="0 0 64 48" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="56" height="42" aria-hidden="true">
-                <rect x="4" y="14" width="44" height="26" rx="4"/>
-                <circle cx="14" cy="40" r="5"/>
-                <circle cx="38" cy="40" r="5"/>
-                <path d="M4 20h44M4 14l8-10h24l8 10"/>
-                <path d="M52 22h6a2 2 0 012 2v8a2 2 0 01-2 2h-6"/>
-              </svg>
+              <img src="/icon1.png" alt="Safari jeep icon" loading="lazy" />
             </span>
             <div>
               <h3>Let Us Create Your Tailor-Made Trip</h3>
