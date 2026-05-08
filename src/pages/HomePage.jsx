@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { blogCards, destinations, featuredTours, reasonCards, testimonials } from '../data/siteData'
 
 const HERO_SLIDES = [
-  'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1800&q=80',
-  'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1800&q=80',
-  'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1800&q=80',
+  '/hero-slide-1.png',
+  '/hero-slide-2.png',
+  '/hero-slide-3.png',
 ]
 
 const TYPING_WORDS = ['Treks', 'Adventures', 'Journeys', 'Expeditions', 'Escapes']
@@ -211,13 +211,13 @@ export default function HomePage() {
             <div className="about-photo-stack">
               <img
                 className="about-img-back"
-                src="https://images.unsplash.com/photo-1606574977565-af78d4b2b5a8?auto=format&fit=crop&w=600&q=80"
+                src="/about-leopard.png"
                 alt="Leopard on tree"
                 loading="lazy"
               />
               <img
                 className="about-img-front"
-                src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=700&q=80"
+                src="/about-lion.png"
                 alt="Lion close-up"
                 loading="lazy"
               />
@@ -398,13 +398,13 @@ export default function HomePage() {
             <div className="photo-stack">
               <div className="photo-polar polar-back">
                 <img
-                  src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=400&q=80"
+                  src="/testimonial-1.png"
                   alt="Safari scene"
                 />
               </div>
               <div className="photo-polar polar-front">
                 <img
-                  src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=400&q=80"
+                  src="/testimonial-2.png"
                   alt="Safari scene"
                 />
               </div>
@@ -439,7 +439,7 @@ export default function HomePage() {
       {/* ── CTA BAND ──────────────────────────────────────────── */}
       <section
         className="cta-section"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1800&q=80)' }}
+        style={{ backgroundImage: 'url(/cta-background.png)' }}
       >
         <div className="cta-overlay" />
         <div className="container cta-inner">

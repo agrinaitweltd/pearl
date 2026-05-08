@@ -16,7 +16,7 @@ export const allTours = [
     tier: 'Mid-Range',
     days: 3,
     destination: 'Bwindi',
-    image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-gorilla-trekking.png',
   },
   {
     route: 'Entebbe → Queen Elizabeth → Entebbe',
@@ -26,7 +26,7 @@ export const allTours = [
     tier: 'Mid-Range',
     days: 4,
     destination: 'Queen Elizabeth',
-    image: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-big-five.png',
   },
   {
     route: 'Entebbe → Murchison Falls → Kampala',
@@ -36,7 +36,7 @@ export const allTours = [
     tier: 'Mid-Range',
     days: 5,
     destination: 'Murchison Falls',
-    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-murchison-falls.png',
   },
   {
     route: 'Kampala → Kibale → Queen Elizabeth → Kampala',
@@ -163,37 +163,37 @@ export const destinations = [
   {
     name: 'Bwindi Impenetrable National Park',
     slug: 'Bwindi',
-    image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=900&q=80',
+    image: '/dest-bwindi.png',
     text: 'Premier gorilla trekking destination with misty rainforest trails and rare mountain gorilla families.',
   },
   {
     name: 'Queen Elizabeth National Park',
     slug: 'Queen Elizabeth',
-    image: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=80',
+    image: '/dest-queen-elizabeth.png',
     text: 'Famous for tree-climbing lions, Kazinga Channel boat cruises, and diverse savannah wildlife.',
   },
   {
     name: 'Murchison Falls National Park',
     slug: 'Murchison Falls',
-    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=80',
+    image: '/dest-murchison-falls.png',
     text: 'Home to the world\'s most powerful waterfall, dramatic Nile scenery and rich savannah game drives.',
   },
   {
     name: 'Kibale Forest National Park',
     slug: 'Kibale',
-    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=900&q=80',
+    image: '/dest-kibale.png',
     text: 'The primate capital of the world — home to 13 primate species including chimpanzees and red colobus.',
   },
   {
     name: 'Kidepo Valley National Park',
     slug: 'Kidepo',
-    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80',
+    image: '/dest-kidepo.png',
     text: 'Uganda\'s most remote park — untouched savannah, huge herds, and some of Africa\'s finest landscapes.',
   },
   {
     name: 'Lake Mburo National Park',
     slug: 'Lake Mburo',
-    image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=900&q=80',
+    image: '/dest-mburo.png',
     text: 'A relaxed park famous for zebras, hippos, impalas and rewarding horseback or walking safaris.',
   },
 ]
@@ -223,19 +223,16 @@ export const blogCards = [
   {
     date: '2 May, 2025',
     title: 'How Much Does a Uganda Safari Cost',
-    image:
-      'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80',
+    image: '/blog-safari-cost.png',
   },
   {
     date: '2 May, 2025',
     title: 'How to Book a Gorilla Safari in Uganda',
-    image:
-      'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=800&q=80',
+    image: '/blog-gorilla-booking.png',
   },
   {
     date: '2 May, 2025',
     title: 'Uganda Safari Packing List: Everything You Need',
-    image:
-      'https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&w=800&q=80',
+    image: '/blog-packing-list.png',
   },
 ]
