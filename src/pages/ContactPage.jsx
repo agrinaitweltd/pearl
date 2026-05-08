@@ -23,7 +23,7 @@ export default function ContactPage() {
     // Execute reCAPTCHA v3
     if (window.grecaptcha) {
       window.grecaptcha.ready(() => {
-        window.grecaptcha.execute('6Lentd8sAAAAAAzAzvRZnwzKJQK-lSWGbyyHYO0Y', { action: 'submit' })
+        window.grecaptcha.execute('6LePIuAsAAAAABQKQENZ45ksAjDQfcOpQlk7I6O2', { action: 'submit' })
           .then((token) => {
             // Add token to form data and submit
             console.log('reCAPTCHA token:', token)
