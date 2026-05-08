@@ -106,7 +106,7 @@ button { cursor: pointer; font-family: inherit; }
   content: '';
   display: block;
   position: absolute;
-  bottom: -50px;
+  bottom: -15px;
   left: 0;
   width: 100%;
   height: 65px;
