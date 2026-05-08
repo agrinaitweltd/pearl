@@ -1261,10 +1261,10 @@ button { cursor: pointer; font-family: inherit; }
   gap: 60px;
   align-items: center;
   position: relative;
-  background-image: 
-    radial-gradient(circle, #d0d8d4 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3Cstyle%3E.land%7Bfill:%23d8e3de;stroke:%23b8c9bf;stroke-width:0.5;%7D%3C/style%3E%3C/defs%3E%3Cg opacity='0.15'%3E%3Cellipse class='land' cx='150' cy='80' rx='60' ry='50'/%3E%3Cellipse class='land' cx='180' cy='140' rx='45' ry='35'/%3E%3Cpath class='land' d='M 240 60 Q 280 50 320 65 L 330 90 Q 310 100 280 95 Q 260 90 240 80 Z'/%3E%3Cpath class='land' d='M 340 140 L 380 135 L 400 150 L 420 145 L 440 160 L 430 180 L 410 175 L 390 185 L 370 170 L 350 175 Z'/%3E%3Cellipse class='land' cx='500' cy='90' rx='70' ry='45'/%3E%3Cpath class='land' d='M 580 140 Q 620 135 650 145 L 660 165 Q 640 175 610 170 Q 590 165 580 155 Z'/%3E%3Cpath class='land' d='M 100 220 L 140 210 L 160 225 L 150 250 L 130 260 L 110 255 L 95 240 Z'/%3E%3Cpath class='land' d='M 180 240 Q 220 230 260 235 L 270 260 L 250 275 Q 210 280 180 270 Z'/%3E%3Cellipse class='land' cx='350' cy='260' rx='55' ry='40'/%3E%3Cpath class='land' d='M 440 220 L 490 215 L 520 230 L 530 255 L 510 270 L 470 275 L 445 260 Z'/%3E%3Cellipse class='land' cx='620' cy='250' rx='65' ry='50'/%3E%3Cpath class='land' d='M 150 320 Q 180 310 210 315 L 215 335 Q 190 345 165 340 Z'/%3E%3Cellipse class='land' cx='550' cy='330' rx='50' ry='35'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   padding: 80px 0;
   border-radius: 12px;
 }
