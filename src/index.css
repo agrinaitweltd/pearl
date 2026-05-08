@@ -2263,12 +2263,6 @@ button { cursor: pointer; font-family: inherit; }
 .cf-field select { color: var(--muted); cursor: pointer; }
 .cf-field select:not([value=""]) { color: var(--text); }
 .cf-field-full { grid-column: span 2; }
-.cf-recaptcha {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  grid-column: span 2;
-}
 .btn-contact-submit {
   display: inline-flex;
   align-items: center;

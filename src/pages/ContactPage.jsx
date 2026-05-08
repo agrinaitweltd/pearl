@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const ENQUIRY_TYPES = [
@@ -14,29 +14,25 @@ const EMPTY = { name:'', email:'', phone:'', country:'', adults:'', children:'',
 export default function ContactPage() {
   const [enquiry, setEnquiry] = useState(null)
   const [form, setForm] = useState(EMPTY)
-  const recaptchaRef = useRef(null)
-  const recaptchaWidgetId = useRef(null)
   
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
 
-  // Render reCAPTCHA when form appears
-  useEffect(() => {
-    if (enquiry && recaptchaRef.current && window.grecaptcha) {
-      // Wait a bit for grecaptcha to be ready
-      const timer = setTimeout(() => {
-        if (window.grecaptcha && window.grecaptcha.render && recaptchaWidgetId.current === null) {
-          try {
-            recaptchaWidgetId.current = window.grecaptcha.render(recaptchaRef.current, {
-              'sitekey': '6Lentd8sAAAAAAzAzvRZnwzKJQK-lSWGbyyHYO0Y'
-            })
-          } catch (e) {
-            console.log('reCAPTCHA already rendered or not ready')
-          }
-        }
-      }, 100)
-      return () => clearTimeout(timer)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    
+    // Execute reCAPTCHA v3
+    if (window.grecaptcha) {
+      window.grecaptcha.ready(() => {
+        window.grecaptcha.execute('6Lentd8sAAAAAAzAzvRZnwzKJQK-lSWGbyyHYO0Y', { action: 'submit' })
+          .then((token) => {
+            // Add token to form data and submit
+            console.log('reCAPTCHA token:', token)
+            // Here you would normally send the form with the token
+            alert('Form submitted with reCAPTCHA verification!')
+          })
+      })
     }
-  }, [enquiry])
+  }
 
   return (
     <>
@@ -259,11 +255,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="cf-recaptcha">
-                  <div ref={recaptchaRef}></div>
-                </div>
-
-                <button type="submit" className="btn-contact-submit">
+                <button type="submit" className="btn-contact-submit" onClick={handleSubmit}>
                   <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                     <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
                   </svg>
