@@ -285,11 +285,7 @@ export default function HomePage() {
         <div className="why-inner">
           <div className="container">
             <div className="why-top">
-              <svg className="why-mountain" viewBox="0 0 80 64" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M4 56 L28 14 L52 56 Z"/>
-                <path d="M32 56 L54 24 L76 56"/>
-                <circle cx="28" cy="8" r="4" fill="white" stroke="none" opacity="0.8"/>
-              </svg>
+              <img src="/icon6.png" alt="" aria-hidden="true" className="why-mountain" style={{ width: '80px', height: '64px', objectFit: 'contain' }} />
               <div className="why-heading-col">
                 <h2>Experience Africa Like Never Before!</h2>
                 <p className="why-sub">Explore Uganda's Breathtaking Landscapes, Diverse Wildlife, And Vibrant Culture With Pearl Land Safaris.</p>
@@ -344,40 +340,17 @@ export default function HomePage() {
               {
                 platform: 'TripAdvisor Experiences', score: '4.8/5',
                 text: 'Read the stories of our Pearl Land Safaris travelers on TripAdvisor and get inspired for your own unforgettable safari adventure in Uganda.',
-                icon: (
-                  <svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
-                    <circle cx="14" cy="14" r="14" fill="#34E0A1"/>
-                    <circle cx="9" cy="14" r="3.5" fill="white"/>
-                    <circle cx="19" cy="14" r="3.5" fill="white"/>
-                    <circle cx="9" cy="14" r="1.8" fill="#34E0A1"/>
-                    <circle cx="19" cy="14" r="1.8" fill="#34E0A1"/>
-                    <path d="M5 11 Q14 5 23 11" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                  </svg>
-                )
+                icon: <img src="/icon3.png" alt="TripAdvisor" width="28" height="28" style={{ objectFit: 'contain' }} />
               },
               {
                 platform: 'Google Experiences', score: '5.0/5',
                 text: 'Discover what our travelers have to say about their safari experiences with Pearl Land Safaris on Google Reviews. Let their stories inspire you.',
-                icon: (
-                  <svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
-                    <circle cx="14" cy="14" r="14" fill="white" stroke="#e8e8e8" strokeWidth="1"/>
-                    <path d="M21.5 14.2c0-.5 0-1-.1-1.5H14v2.8h4.2c-.2.9-.7 1.7-1.5 2.2v1.8h2.4c1.4-1.3 2.4-3.2 2.4-5.3z" fill="#4285F4"/>
-                    <path d="M14 22c2.2 0 4-.7 5.3-1.9l-2.4-1.8c-.7.5-1.7.8-2.9.8-2.2 0-4.1-1.5-4.7-3.5H6.7v1.9C8 20.3 10.8 22 14 22z" fill="#34A853"/>
-                    <path d="M9.3 15.6c-.2-.5-.3-1-.3-1.6s.1-1.1.3-1.6V10.5H6.7C6 11.8 5.7 13.3 5.7 14s.3 2.2 1 3.5l2.6-1.9z" fill="#FBBC05"/>
-                    <path d="M14 9.5c1.2 0 2.3.4 3.2 1.2l2.3-2.3C18 7 16.2 6.2 14 6.2 10.8 6.2 8 7.9 6.7 10.5l2.6 1.9C9.9 10.9 11.8 9.5 14 9.5z" fill="#EA4335"/>
-                  </svg>
-                )
+                icon: <img src="/icon4.png" alt="Google" width="28" height="28" style={{ objectFit: 'contain' }} />
               },
               {
                 platform: 'Safari Bookings Experiences', score: '5.0/5',
                 text: 'Explore reviews from our travelers on SafariBookings and see why Pearl Land Safaris is a top choice for safari enthusiasts. Your dream safari starts here.',
-                icon: (
-                  <svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
-                    <circle cx="14" cy="14" r="14" fill="#E8401C"/>
-                    <path d="M14 6c-2 0-3.5 1-4.5 2.5-1 1.5-1 3.5 0 5L14 21l4.5-7.5c1-1.5 1-3.5 0-5C17.5 7 16 6 14 6z" fill="white" opacity="0.9"/>
-                    <circle cx="14" cy="12" r="2.5" fill="#E8401C"/>
-                  </svg>
-                )
+                icon: <img src="/icon5.png" alt="Safari Bookings" width="28" height="28" style={{ objectFit: 'contain' }} />
               },
             ].map((r) => (
               <div className="review-card" key={r.platform}>

@@ -8,7 +8,7 @@ function Footer() {
           <div className="footer-cta">
             <div className="footer-cta-left">
               <span className="footer-cta-icon">
-                <img src="/icon1.png" alt="Safari jeep icon" loading="lazy" />
+                <img src="/icon6.png" alt="Safari jeep icon" loading="lazy" />
               </span>
               <div>
                 <h3>Let Us Create Your Tailor-Made Trip</h3>
@@ -114,7 +114,7 @@ function Footer() {
               <a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a>
             </p>
             <p>Copyright © 2026 <a href="/">Pearl Land Safaris</a>. All Rights Reserved.</p>
-            <p>Designed by <a href="#">Kavo Technologies</a></p>
+            <p>Designed by <a href="https://www.kavotech.uk" target="_blank" rel="noopener noreferrer">Kavo Technologies</a></p>
           </div>
         </div>
       </div>
