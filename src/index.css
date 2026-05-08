@@ -891,15 +891,25 @@ button { cursor: pointer; font-family: inherit; }
 .tour-arrow-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: var(--green);
-  transition: color 0.2s;
-  background: none;
-  border: none;
+  transition: all 0.3s;
+  background: var(--white);
+  border: 2px solid #e8ede8;
   padding: 0;
   cursor: pointer;
   text-decoration: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(27, 107, 58, 0.08);
 }
-.tour-arrow-btn:hover { color: var(--green-dark); }
+.tour-arrow-btn:hover { 
+  color: var(--white);
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 4px 12px rgba(27, 107, 58, 0.15);
+}
 
 /* ─── About / Why section ─────────────────────────────────────── */
 .about-section { 
