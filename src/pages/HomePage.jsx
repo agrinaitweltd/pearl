@@ -400,12 +400,14 @@ export default function HomePage() {
                 <img
                   src="/testimonial-1.png"
                   alt="Safari scene"
+                  loading="lazy"
                 />
               </div>
               <div className="photo-polar polar-front">
                 <img
                   src="/testimonial-2.png"
                   alt="Safari scene"
+                  loading="lazy"
                 />
               </div>
             </div>

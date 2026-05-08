@@ -84,7 +84,7 @@ function Footer() {
                 </div>
                 <div className="fci-text">
                   <small>Call / WhatsApp</small>
-                  <strong>+256 762 378 870</strong>
+                  <strong>+256 (0) 772 498064</strong>
                 </div>
               </div>
               <div className="footer-contact-item">

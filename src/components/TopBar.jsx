@@ -56,9 +56,9 @@ function TopBar() {
             <span className="tc-icon"><IconMail /></span>
             info@pearllandsafaris.com
           </a>
-          <a href="tel:+256762378870">
+          <a href="tel:+256772498064">
             <span className="tc-icon"><IconPhone /></span>
-            +256 762 378 870
+            +256 (0) 772 498064
           </a>
           <a href="/contact">
             <span className="tc-icon"><IconPin /></span>

@@ -30,6 +30,7 @@ export default function DestinationsPage() {
             <img
               src="/dest-intro-uganda.png"
               alt="Uganda safari"
+              loading="lazy"
             />
           </div>
           <div className="dest-intro-text">
@@ -63,7 +64,7 @@ export default function DestinationsPage() {
               const count = tourCount(d.slug)
               return (
                 <Link to="/tour-packages" className="dest-park-card" key={d.slug}>
-                  <img src={d.image} alt={d.name} className="dest-park-img" />
+                  <img src={d.image} alt={d.name} className="dest-park-img" loading="lazy" />
                   {count > 0 && (
                     <span className="dest-park-badge">{count} TOUR{count !== 1 ? 'S' : ''}</span>
                   )}

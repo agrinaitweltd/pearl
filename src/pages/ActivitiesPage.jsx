@@ -46,7 +46,7 @@ export default function ActivitiesPage() {
             {activities.map((a) => (
               <div className="act-card" key={a.name}>
                 <div className="act-card-photo-wrap">
-                  <img src={a.image} alt={a.name} className="act-card-img" />
+                  <img src={a.image} alt={a.name} className="act-card-img" loading="lazy" />
                   <div className="act-card-overlay">
                     <span className="act-card-overlay-label">{a.name}</span>
                   </div>

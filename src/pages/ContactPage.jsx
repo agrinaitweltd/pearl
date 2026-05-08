@@ -52,8 +52,7 @@ export default function ContactPage() {
               </svg>
             </div>
             <h4>Phone Number</h4>
-            <p>+256 762 378 870</p>
-            <p>+256 787 697 797</p>
+            <p>+256 (0) 772 498064</p>
           </div>
 
           <div className="contact-info-card">
@@ -64,7 +63,6 @@ export default function ContactPage() {
             </div>
             <h4>Mail Address</h4>
             <p>info@pearllandsafaris.com</p>
-            <p>pearl@safariug.com</p>
           </div>
 
         </div>

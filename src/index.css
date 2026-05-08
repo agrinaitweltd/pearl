@@ -1658,7 +1658,7 @@ button { cursor: pointer; font-family: inherit; }
   align-items: center;
   justify-content: center;
   background-image: url('/hero-tour-packages.png');
-  background-size: cover;
+  background-size: auto 130%;
   background-position: center 40%;
   text-align: center;
   color: var(--white);
@@ -1868,7 +1868,7 @@ button { cursor: pointer; font-family: inherit; }
   align-items: center;
   justify-content: center;
   background-image: url('/hero-contact.png');
-  background-size: cover;
+  background-size: auto 130%;
   background-position: center 45%;
   text-align: center;
   color: var(--white);
@@ -2848,7 +2848,7 @@ button { cursor: pointer; font-family: inherit; }
   align-items: center;
   justify-content: center;
   background-image: url('/hero-activities.png');
-  background-size: cover;
+  background-size: auto 130%;
   background-position: center 55%;
   text-align: center;
   color: var(--white);
@@ -3018,7 +3018,7 @@ button { cursor: pointer; font-family: inherit; }
   align-items: center;
   justify-content: center;
   background-image: url('/hero-destinations.png');
-  background-size: cover;
+  background-size: auto 130%;
   background-position: center 55%;
   text-align: center;
   color: var(--white);
@@ -3199,7 +3199,7 @@ button { cursor: pointer; font-family: inherit; }
   align-items: center;
   justify-content: center;
   background-image: url('/hero-about.png');
-  background-size: cover;
+  background-size: auto 130%;
   background-position: center 35%;
   text-align: center;
   color: var(--white);
@@ -4061,6 +4061,15 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 @media (max-width: 720px) {
+  /* Reset hero backgrounds to cover on mobile */
+  .tours-page-hero,
+  .about-page-hero,
+  .dest-page-hero,
+  .act-page-hero,
+  .contact-page-hero {
+    background-size: cover !important;
+  }
+
   .sb-btn-wrap { padding: 14px; }
   .search-bar { grid-template-columns: 1fr; }
   .sb-btn-wrap { grid-column: auto; }
@@ -4403,7 +4412,8 @@ button { cursor: pointer; font-family: inherit; }
   }
   
   .footer-cta-wrapper { 
-    margin-bottom: -70px;
+    transform: translateY(-50%);
+    margin-bottom: -100px;
     animation: mobile-cta-slide-up 1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   }
   .footer-cta { 
