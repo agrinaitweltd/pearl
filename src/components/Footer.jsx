@@ -80,7 +80,7 @@ function Footer() {
               <h4>Contact Us</h4>
               <div className="footer-contact-item">
                 <div className="fci-icon">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" width="12" height="12" aria-hidden="true"><path d="M3 1h3l1.5 4-2 1.5a9 9 0 003 3L10 7.5l4 1.5v3a1 1 0 01-1 1C5.5 13 3 5.5 3 2a1 1 0 011-1h-1z"/></svg>
+                  <img src="/icon8.png" alt="" width="12" height="12" style={{ objectFit: 'contain' }} aria-hidden="true" />
                 </div>
                 <div className="fci-text">
                   <small>Call / WhatsApp</small>
@@ -89,7 +89,7 @@ function Footer() {
               </div>
               <div className="footer-contact-item">
                 <div className="fci-icon">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" width="12" height="12" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 3l7 6 7-6"/></svg>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="#000000" strokeWidth="1.4" strokeLinecap="round" width="12" height="12" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 3l7 6 7-6"/></svg>
                 </div>
                 <div className="fci-text">
                   <small>Email Address</small>
@@ -98,7 +98,7 @@ function Footer() {
               </div>
               <div className="footer-contact-item">
                 <div className="fci-icon">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" width="12" height="12" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/></svg>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="#000000" strokeWidth="1.4" strokeLinecap="round" width="12" height="12" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><path d="M8 1a5 5 0 015 5c0 4-5 9-5 9S3 10 3 6a5 5 0 015-5z"/></svg>
                 </div>
                 <div className="fci-text">
                   <small>Visit Office</small>
