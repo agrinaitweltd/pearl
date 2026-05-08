@@ -1078,7 +1078,7 @@ button { cursor: pointer; font-family: inherit; }
 .why-section::before {
   content: '';
   position: absolute;
-  top: -8px;
+  top: -15px;
   left: 0;
   right: 0;
   height: 30px;
@@ -1093,7 +1093,7 @@ button { cursor: pointer; font-family: inherit; }
 .why-section::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -15px;
   left: 0;
   right: 0;
   height: 30px;
