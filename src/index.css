@@ -201,9 +201,9 @@ button { cursor: pointer; font-family: inherit; }
   text-decoration: none;
 }
 .brand-logo-img {
-  width: 320px;
+  width: 260px;
   height: auto;
-  max-height: 85px;
+  max-height: 70px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -1074,43 +1074,36 @@ button { cursor: pointer; font-family: inherit; }
   padding-bottom: 0;
   animation: fade-in 0.8s ease-out;
 }
-/* torn paper top edge */
+/* icon7.png top divider */
 .why-section::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 52px;
-  background: var(--bg-page);
-  clip-path: polygon(
-    0% 0%, 2% 60%, 4% 10%, 6% 80%, 8% 20%, 10% 70%, 12% 15%,
-    14% 75%, 16% 25%, 18% 68%, 20% 18%, 22% 72%, 24% 22%,
-    26% 65%, 28% 15%, 30% 70%, 32% 20%, 34% 75%, 36% 25%,
-    38% 68%, 40% 15%, 42% 72%, 44% 22%, 46% 68%, 48% 18%,
-    50% 70%, 52% 22%, 54% 72%, 56% 18%, 58% 68%, 60% 15%,
-    62% 72%, 64% 22%, 66% 68%, 68% 18%, 70% 70%, 72% 20%,
-    74% 72%, 76% 22%, 78% 65%, 80% 15%, 82% 70%, 84% 22%,
-    86% 72%, 88% 20%, 90% 68%, 92% 15%, 94% 72%, 96% 22%,
-    98% 60%, 100% 0%
-  );
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 18px;
+  background-image: url('/icon7.png');
+  background-size: 150px 100%;
+  background-repeat: repeat-x;
+  background-position: left top;
+  pointer-events: none;
+  z-index: 1;
 }
-/* torn paper bottom edge */
+/* icon7.png bottom divider */
 .why-section::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 52px;
-  background: var(--bg-page);
-  clip-path: polygon(
-    0% 100%, 2% 40%, 4% 90%, 6% 20%, 8% 80%, 10% 30%, 12% 85%,
-    14% 25%, 16% 75%, 18% 32%, 20% 82%, 22% 28%, 24% 78%,
-    26% 35%, 28% 85%, 30% 30%, 32% 80%, 34% 25%, 36% 75%,
-    38% 32%, 40% 85%, 42% 28%, 44% 78%, 46% 32%, 48% 82%,
-    50% 30%, 52% 78%, 54% 28%, 56% 82%, 58% 32%, 60% 85%,
-    62% 28%, 64% 78%, 66% 32%, 68% 82%, 70% 30%, 72% 80%,
-    74% 28%, 76% 78%, 78% 35%, 80% 85%, 82% 30%, 84% 78%,
-    86% 28%, 88% 80%, 90% 32%, 92% 85%, 94% 28%, 96% 78%,
-    98% 40%, 100% 100%
-  );
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 18px;
+  background-image: url('/icon7.png');
+  background-size: 150px 100%;
+  background-repeat: repeat-x;
+  background-position: left top;
+  transform: scaleY(-1);
+  pointer-events: none;
+  z-index: 1;
 }
 .why-inner {
   padding: 80px 0 80px;
@@ -3543,8 +3536,8 @@ button { cursor: pointer; font-family: inherit; }
     gap: 0.8rem;
   }
   .brand-logo-img {
-    width: 210px;
-    max-height: 65px;
+    width: 180px;
+    max-height: 55px;
     animation: mobile-logo-bob 4.8s ease-in-out infinite;
   }
   .menu-btn {
