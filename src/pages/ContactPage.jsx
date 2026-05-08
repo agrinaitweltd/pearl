@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 const ENQUIRY_TYPES = [
@@ -14,8 +14,29 @@ const EMPTY = { name:'', email:'', phone:'', country:'', adults:'', children:'',
 export default function ContactPage() {
   const [enquiry, setEnquiry] = useState(null)
   const [form, setForm] = useState(EMPTY)
+  const recaptchaRef = useRef(null)
+  const recaptchaWidgetId = useRef(null)
   
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
+
+  // Render reCAPTCHA when form appears
+  useEffect(() => {
+    if (enquiry && recaptchaRef.current && window.grecaptcha) {
+      // Wait a bit for grecaptcha to be ready
+      const timer = setTimeout(() => {
+        if (window.grecaptcha && window.grecaptcha.render && recaptchaWidgetId.current === null) {
+          try {
+            recaptchaWidgetId.current = window.grecaptcha.render(recaptchaRef.current, {
+              'sitekey': '6Lentd8sAAAAAAzAzvRZnwzKJQK-lSWGbyyHYO0Y'
+            })
+          } catch (e) {
+            console.log('reCAPTCHA already rendered or not ready')
+          }
+        }
+      }, 100)
+      return () => clearTimeout(timer)
+    }
+  }, [enquiry])
 
   return (
     <>
@@ -239,7 +260,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="cf-recaptcha">
-                  <div className="g-recaptcha" data-sitekey="6Lentd8sAAAAAAzAzvRZnwzKJQK-lSWGbyyHYO0Y"></div>
+                  <div ref={recaptchaRef}></div>
                 </div>
 
                 <button type="submit" className="btn-contact-submit">
