@@ -110,7 +110,7 @@ button { cursor: pointer; font-family: inherit; }
   left: 0;
   width: 100%;
   height: 18px;
-  background-image: url('/icon7.png');
+  background-image: url('/grass-edge-thin-tile.png');
   background-size: 150px 100%;
   background-repeat: repeat-x;
   background-position: left top;
@@ -201,9 +201,9 @@ button { cursor: pointer; font-family: inherit; }
   text-decoration: none;
 }
 .brand-logo-img {
-  width: 280px;
+  width: 320px;
   height: auto;
-  max-height: 75px;
+  max-height: 85px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -3543,8 +3543,8 @@ button { cursor: pointer; font-family: inherit; }
     gap: 0.8rem;
   }
   .brand-logo-img {
-    width: 190px;
-    max-height: 58px;
+    width: 210px;
+    max-height: 65px;
     animation: mobile-logo-bob 4.8s ease-in-out infinite;
   }
   .menu-btn {
