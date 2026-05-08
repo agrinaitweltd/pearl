@@ -8,7 +8,7 @@ function Footer() {
           <div className="footer-cta">
             <div className="footer-cta-left">
               <span className="footer-cta-icon">
-                <img src="/icon6.png" alt="Safari jeep icon" loading="lazy" />
+                <img src="/icon1.png" alt="Safari jeep icon" loading="lazy" />
               </span>
               <div>
                 <h3>Let Us Create Your Tailor-Made Trip</h3>
