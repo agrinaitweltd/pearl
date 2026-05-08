@@ -166,13 +166,13 @@ function AboutPage() {
             <div className="about-photo-stack">
               <img
                 className="about-img-back"
-                src="https://images.unsplash.com/photo-1606574977565-af78d4b2b5a8?auto=format&fit=crop&w=600&q=80"
+                src="/about-leopard.png"
                 alt="Leopard on tree"
                 loading="lazy"
               />
               <img
                 className="about-img-front"
-                src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=700&q=80"
+                src="/about-lion.png"
                 alt="Lion close-up"
                 loading="lazy"
               />
@@ -191,7 +191,7 @@ function AboutPage() {
           {/* Left: landscape photo with diamond badge */}
           <div className="about-why-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80"
+              src="/about-landscape.png"
               alt="Uganda landscape"
               loading="lazy"
             />
