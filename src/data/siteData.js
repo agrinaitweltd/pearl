@@ -46,7 +46,7 @@ export const allTours = [
     tier: 'Luxury',
     days: 6,
     destination: 'Kibale',
-    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-chimps-big-five.png',
   },
   {
     route: 'Entebbe → Bwindi → Lake Mburo → Entebbe',
@@ -56,7 +56,7 @@ export const allTours = [
     tier: 'Luxury',
     days: 7,
     destination: 'Bwindi',
-    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-gorillas-zebras-combo.png',
   },
   {
     route: 'Kampala → Kidepo Valley → Kampala',
@@ -66,7 +66,7 @@ export const allTours = [
     tier: 'Luxury',
     days: 4,
     destination: 'Kidepo',
-    image: 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-kidepo-wilderness.png',
   },
   {
     route: 'Entebbe → Bwindi → Entebbe',
@@ -76,7 +76,7 @@ export const allTours = [
     tier: 'Budget',
     days: 2,
     destination: 'Bwindi',
-    image: 'https://images.unsplash.com/photo-1606574977565-af78d4b2b5a8?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-budget-gorilla-trek.png',
   },
   {
     route: 'Entebbe → Lake Mburo → Entebbe',
@@ -86,7 +86,7 @@ export const allTours = [
     tier: 'Budget',
     days: 3,
     destination: 'Lake Mburo',
-    image: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-lake-mburo-budget.png',
   },
   {
     route: 'Kampala → Queen Elizabeth → Bwindi → Kampala',
@@ -96,7 +96,7 @@ export const allTours = [
     tier: 'Luxury',
     days: 8,
     destination: 'Queen Elizabeth',
-    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-ultimate-uganda-safari.png',
   },
   {
     route: 'Entebbe → Murchison Falls → Entebbe',
@@ -106,7 +106,7 @@ export const allTours = [
     tier: 'Budget',
     days: 3,
     destination: 'Murchison Falls',
-    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=700&q=80',
+    image: '/tour-murchison-falls-budget.png',
   },
 ]
 
@@ -116,39 +116,39 @@ export const featuredTours = allTours.slice(0, 3)
 export const activities = [
   {
     name: 'Gorilla Trekking',
-    image: 'https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-gorilla-trekking.png',
   },
   {
     name: 'Game Drive',
-    image: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-game-drive.png',
   },
   {
     name: 'Chimpanzee Tracking',
-    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-chimpanzee-tracking.png',
   },
   {
     name: 'Nile Boat Cruise',
-    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-nile-boat-cruise.png',
   },
   {
     name: 'Bird Watching',
-    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-bird-watching.png',
   },
   {
     name: 'Cultural Village Tour',
-    image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-cultural-village-tour.png',
   },
   {
     name: 'Hiking & Nature Walks',
-    image: 'https://images.unsplash.com/photo-1552083375-1447ce886485?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-hiking-nature-walks.png',
   },
   {
     name: 'Night Game Drive',
-    image: 'https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-night-game-drive.png',
   },
   {
     name: 'Walking Safari',
-    image: 'https://images.unsplash.com/photo-1504173010664-32509107de16?auto=format&fit=crop&w=800&q=80',
+    image: '/activity-walking-safari.png',
   },
 ]
 

@@ -57,9 +57,9 @@ function Footer() {
               <ul>
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/contact">Enquire Now</Link></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Our Insights</a></li>
-                <li><Link to="/tour-packages">Activities</Link></li>
+                <li><Link to="/faq">FAQs</Link></li>
+                <li><Link to="/tour-packages">Safari Packages</Link></li>
+                <li><Link to="/activities">Activities</Link></li>
               </ul>
             </div>
 
@@ -68,10 +68,10 @@ function Footer() {
               <h4>Explore</h4>
               <ul>
                 <li><Link to="/contact">Contact Us</Link></li>
-                <li><a href="#">Payment Options</a></li>
-                <li><Link to="/tour-packages">Safaris</Link></li>
-                <li><Link to="/destinations">Uganda</Link></li>
-                <li><a href="#">Accommodations</a></li>
+                <li><Link to="/destinations">Discover Uganda</Link></li>
+                <li><Link to="/accommodations">Accommodations</Link></li>
+                <li><Link to="/tour-packages">Tour Packages</Link></li>
+                <li><Link to="/about">About Pearl Land</Link></li>
               </ul>
             </div>
 
