@@ -1657,7 +1657,7 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1606574977565-af78d4b2b5a8?auto=format&fit=crop&w=1800&q=80');
+  background-image: url('/hero-tour-packages.png');
   background-size: cover;
   background-position: center 40%;
   text-align: center;
@@ -1867,7 +1867,7 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1800&q=80');
+  background-image: url('/hero-contact.png');
   background-size: cover;
   background-position: center 45%;
   text-align: center;
@@ -2847,7 +2847,7 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1800&q=80');
+  background-image: url('/hero-activities.png');
   background-size: cover;
   background-position: center 55%;
   text-align: center;
@@ -3017,7 +3017,7 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1800&q=80');
+  background-image: url('/hero-destinations.png');
   background-size: cover;
   background-position: center 55%;
   text-align: center;
@@ -3198,7 +3198,7 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1800&q=80');
+  background-image: url('/hero-about.png');
   background-size: cover;
   background-position: center 35%;
   text-align: center;

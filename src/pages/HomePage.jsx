@@ -177,7 +177,7 @@ export default function HomePage() {
                 <div className="tour-card-image">
                   <img
                     className="tour-card-img"
-                    src={tour.image || `https://images.unsplash.com/photo-${['1516426122078-c23e76319801','1534177616072-ef7dc120449d','1489392191049-fc10c97e64b6'][i % 3]}?auto=format&fit=crop&w=700&q=80`}
+                    src={tour.image || '/tour-placeholder.png'}
                     alt={tour.title}
                     loading="lazy"
                   />

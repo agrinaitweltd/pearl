@@ -28,7 +28,7 @@ export default function DestinationsPage() {
         <div className="container dest-intro-inner">
           <div className="dest-intro-photo">
             <img
-              src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=900&q=80"
+              src="/dest-intro-uganda.png"
               alt="Uganda safari"
             />
           </div>

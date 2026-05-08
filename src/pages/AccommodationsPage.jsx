@@ -6,7 +6,7 @@ const ACCOMMODATIONS = [
     name: 'Selous Impala Camp',
     location: 'Nyerere National Park',
     description: 'Selous Safari Retreat in Nyerere National Park',
-    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80',
+    image: '/accommodation-1.png',
     park: 'Nyerere National Park',
   },
   {
@@ -14,7 +14,7 @@ const ACCOMMODATIONS = [
     name: 'Camp Bastiani Mikumi',
     location: 'Mikumi National Park',
     description: 'Your Ideal Safari Retreat',
-    image: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80',
+    image: '/accommodation-2.png',
     park: 'Mikumi National Park',
   },
   {
@@ -22,7 +22,7 @@ const ACCOMMODATIONS = [
     name: 'Oloro Tented Camp',
     location: 'Serengeti National Park',
     description: 'A Hidden Gem in the Heart of the Wilderness',
-    image: 'https://images.unsplash.com/photo-1591825729269-caeb344f6df2?auto=format&fit=crop&w=800&q=80',
+    image: '/accommodation-3.png',
     park: 'Serengeti National Park',
   },
   {
@@ -30,7 +30,7 @@ const ACCOMMODATIONS = [
     name: 'Peak Hotel Karatu',
     location: 'Ngorongoro Crater',
     description: 'Your Gateway to Northern Tanzania\'s Wonders',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
+    image: '/accommodation-4.png',
     park: 'Ngorongoro Crater',
   },
   {
@@ -38,7 +38,7 @@ const ACCOMMODATIONS = [
     name: 'Rusiha Hillop Lodge',
     location: 'Ruaha National Park',
     description: 'A Hillop Gem with a Ruaha National Park',
-    image: 'https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=800&q=80',
+    image: '/accommodation-5.png',
     park: 'Ruaha National Park',
   },
   {
@@ -46,7 +46,7 @@ const ACCOMMODATIONS = [
     name: 'Selous Safari Lodge',
     location: 'Nyerere National Park',
     description: 'Overlooking Wild Beauty, Safari Accommodations',
-    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80',
+    image: '/accommodation-6.png',
     park: 'Nyerere National Park',
   },
 ]
