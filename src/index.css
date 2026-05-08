@@ -1078,10 +1078,10 @@ button { cursor: pointer; font-family: inherit; }
 .why-section::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -8px;
   left: 0;
   right: 0;
-  height: 45px;
+  height: 18px;
   background-image: url('/icon7.png');
   background-size: 150px 100%;
   background-repeat: repeat-x;
@@ -1093,10 +1093,10 @@ button { cursor: pointer; font-family: inherit; }
 .why-section::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -8px;
   left: 0;
   right: 0;
-  height: 45px;
+  height: 18px;
   background-image: url('/icon7.png');
   background-size: 150px 100%;
   background-repeat: repeat-x;
