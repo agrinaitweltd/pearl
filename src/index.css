@@ -201,9 +201,9 @@ button { cursor: pointer; font-family: inherit; }
   text-decoration: none;
 }
 .brand-logo-img {
-  width: 214px;
+  width: 280px;
   height: auto;
-  max-height: 62px;
+  max-height: 75px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -3543,8 +3543,8 @@ button { cursor: pointer; font-family: inherit; }
     gap: 0.8rem;
   }
   .brand-logo-img {
-    width: 152px;
-    max-height: 46px;
+    width: 190px;
+    max-height: 58px;
     animation: mobile-logo-bob 4.8s ease-in-out infinite;
   }
   .menu-btn {
