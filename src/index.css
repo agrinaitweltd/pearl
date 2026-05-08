@@ -1081,7 +1081,7 @@ button { cursor: pointer; font-family: inherit; }
   top: 0;
   left: 0;
   right: 0;
-  height: 18px;
+  height: 45px;
   background-image: url('/icon7.png');
   background-size: 150px 100%;
   background-repeat: repeat-x;
@@ -1096,7 +1096,7 @@ button { cursor: pointer; font-family: inherit; }
   bottom: 0;
   left: 0;
   right: 0;
-  height: 18px;
+  height: 45px;
   background-image: url('/icon7.png');
   background-size: 150px 100%;
   background-repeat: repeat-x;
