@@ -37,7 +37,7 @@ function Navbar() {
       <div className="navbar-wrap">
         <div className="container navbar-inner">
           <NavLink to="/" className="brand" aria-label="Pearl Land Safaris home">
-            <img src="/icon7.png" alt="Pearl Land Safaris" className="brand-logo-img" loading="eager" />
+            <img src="/logo.png" alt="Pearl Land Safaris" className="brand-logo-img" loading="eager" />
           </NavLink>
 
           <nav aria-label="Main navigation">
