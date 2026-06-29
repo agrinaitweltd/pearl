@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ACCOMMODATIONS = [
   {
@@ -79,7 +80,7 @@ export default function AccommodationsPage() {
       <div className="accommodations-hero">
         <div className="container">
           <nav className="accommodations-breadcrumb">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
             <span>/</span>
             <span>Accommodations</span>
           </nav>
@@ -140,12 +141,12 @@ export default function AccommodationsPage() {
                       </div>
                       <h3>{acc.name}</h3>
                       <p>{acc.description}</p>
-                      <a href={`/accommodations/${acc.id}`} className="accommodation-link">
+                      <Link to={`/accommodations/${acc.id}`} className="accommodation-link">
                         View Accommodation
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                           <path d="M7 4l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 ))}

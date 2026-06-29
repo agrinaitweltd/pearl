@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import dataService from '../data/dataService'
 
 const ENQUIRY_TYPES = [
   { key: 'safari',  label: 'Safari Booking',   desc: 'Plan a tailor-made trip' },
@@ -25,12 +26,107 @@ export default function ContactPage() {
       window.grecaptcha.ready(() => {
         window.grecaptcha.execute('6LePIuAsAAAAABQKQENZ45ksAjDQfcOpQlk7I6O2', { action: 'submit' })
           .then((token) => {
-            // Add token to form data and submit
+            // Prepare data based on enquiry type
+            let submissionData = {
+              name: form.name,
+              email: form.email,
+              phone: form.phone,
+              country: form.country,
+              message: form.message,
+              type: enquiry
+            }
+
+            // Add type-specific data
+            if (enquiry === 'safari') {
+              submissionData = {
+                ...submissionData,
+                tour: form.tour,
+                arrival: form.arrival,
+                departure: form.departure,
+                adults: form.adults,
+                children: form.children,
+                destinations: form.destinations,
+                budget: form.budget,
+                tourRoute: form.tour // Will be refined based on tour selection
+              }
+            } else if (enquiry === 'group') {
+              submissionData = {
+                ...submissionData,
+                arrival: form.arrival,
+                groupSize: form.groupSize,
+                destinations: form.destinations
+              }
+            } else if (enquiry === 'general') {
+              submissionData = {
+                ...submissionData,
+                subject: form.subject
+              }
+            }
+
+            // Save to data service
+            if (enquiry === 'safari') {
+              dataService.addBooking(submissionData)
+            } else {
+              dataService.addInquiry(submissionData)
+            }
+
             console.log('reCAPTCHA token:', token)
-            // Here you would normally send the form with the token
-            alert('Form submitted with reCAPTCHA verification!')
+            console.log('Form submitted:', submissionData)
+            
+            // Show success message
+            alert('Thank you for your enquiry! Our team will contact you within 24 hours.')
+            
+            // Reset form
+            setForm(EMPTY)
+            setEnquiry(null)
           })
       })
+    } else {
+      // Fallback if reCAPTCHA not loaded
+      let submissionData = {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        country: form.country,
+        message: form.message,
+        type: enquiry
+      }
+
+      if (enquiry === 'safari') {
+        submissionData = {
+          ...submissionData,
+          tour: form.tour,
+          arrival: form.arrival,
+          departure: form.departure,
+          adults: form.adults,
+          children: form.children,
+          destinations: form.destinations,
+          budget: form.budget
+        }
+      } else if (enquiry === 'group') {
+        submissionData = {
+          ...submissionData,
+          arrival: form.arrival,
+          groupSize: form.groupSize,
+          destinations: form.destinations
+        }
+      } else if (enquiry === 'general') {
+        submissionData = {
+          ...submissionData,
+          subject: form.subject
+        }
+      }
+
+      // Save to data service
+      if (enquiry === 'safari') {
+        dataService.addBooking(submissionData)
+      } else {
+        dataService.addInquiry(submissionData)
+      }
+
+      alert('Thank you for your enquiry! Our team will contact you within 24 hours.')
+      setForm(EMPTY)
+      setEnquiry(null)
     }
   }
 
@@ -119,7 +215,7 @@ export default function ContactPage() {
                   key={t.key}
                   type="button"
                   className={`cf-type-btn${enquiry === t.key ? ' active' : ''}`}
-                  onClick={() => { setEnquiry(t.key); if(!selectedTour) setForm(EMPTY) }}
+                  onClick={() => { setEnquiry(t.key); setForm(EMPTY) }}
                 >
                   <span className="cf-type-label">{t.label}</span>
                   <span className="cf-type-desc">{t.desc}</span>

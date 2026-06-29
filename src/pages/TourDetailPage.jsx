@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { activities, allTours, destinations } from '../data/siteData'
+import dataService from '../data/dataService'
 
 const EMPTY = {
   name: '',
@@ -189,6 +190,29 @@ export default function TourDetailPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    
+    // Prepare booking data
+    const bookingData = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      country: form.country,
+      tour: tour.title,
+      tourRoute: tour.route,
+      arrival: form.arrival,
+      departure: form.departure,
+      adults: form.adults,
+      children: form.children,
+      budget: form.budget,
+      accommodation: form.accommodation,
+      message: form.message,
+      amount: tour.price, // Use the tour's base price
+      type: 'booking'
+    }
+
+    // Save to data service
+    dataService.addBooking(bookingData)
+    
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 5000)
   }

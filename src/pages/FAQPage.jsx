@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const FAQ_DATA = [
   {
@@ -86,7 +87,7 @@ export default function FAQPage() {
           <h1>Frequently Asked Questions</h1>
           <p>
             Find answers to common questions about our safari adventures in{' '}
-            <a href="/destinations">Uganda</a>.
+            <Link to="/destinations">Uganda</Link>.
           </p>
 
           <div className="faq-search-bar">

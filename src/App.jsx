@@ -9,6 +9,14 @@ import TourPackagesPage from './pages/TourPackagesPage'
 import TourDetailPage from './pages/TourDetailPage'
 import FAQPage from './pages/FAQPage'
 import AccommodationsPage from './pages/AccommodationsPage'
+import AdminLayout from './admin/AdminLayout'
+import AdminDashboard from './admin/AdminDashboard'
+import AdminTours from './admin/AdminTours'
+import AdminBookings from './admin/AdminBookings'
+import AdminInquiries from './admin/AdminInquiries'
+import AdminSettings from './admin/AdminSettings'
+import AdminLogin from './admin/AdminLogin'
+import AdminProtected from './admin/AdminProtected'
 
 function App() {
   return (
@@ -25,6 +33,23 @@ function App() {
         <Route path="/accommodations" element={<AccommodationsPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
+
+      {/* Admin Routes */}
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route
+        path="/admin"
+        element={
+          <AdminProtected>
+            <AdminLayout />
+          </AdminProtected>
+        }
+      >
+        <Route index element={<AdminDashboard />} />
+        <Route path="tours" element={<AdminTours />} />
+        <Route path="bookings" element={<AdminBookings />} />
+        <Route path="inquiries" element={<AdminInquiries />} />
+        <Route path="settings" element={<AdminSettings />} />
+      </Route>
     </Routes>
   )
 }
